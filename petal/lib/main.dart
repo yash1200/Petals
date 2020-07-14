@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:petal/ui/HomePage.dart';
+import 'package:petal/values/colors.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,10 +10,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Petal',
       debugShowCheckedModeBanner: false,
+      darkTheme: ThemeData.dark(),
       theme: ThemeData(
-        primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: HomePage(),
