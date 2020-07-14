@@ -5,10 +5,10 @@ const bodyparser = require("body-parser");
 const app = express();
 
 mongoose.connect("mongodb://localhost/petal", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false,
-  useCreateIndex: true,
+	useNewUrlParser: true,
+	useUnifiedTopology: true,
+	useFindAndModify: false,
+	useCreateIndex: true,
 });
 mongoose.Promise = global.Promise;
 
