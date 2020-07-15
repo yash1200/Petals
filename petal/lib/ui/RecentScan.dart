@@ -14,11 +14,10 @@ class RecentScan extends StatefulWidget {
 class _RecentScanState extends State<RecentScan> {
   Future<List<Recent>> getData() async {
     final directory = await getApplicationDocumentsDirectory();
-    File file=File('${directory.path}/data.txt');
-    bool exist=await file.exists();
-    if(!exist)
-      file.writeAsString('[]');
-    String contents=await file.readAsString();
+    File file = File('${directory.path}/data.txt');
+    bool exist = await file.exists();
+    if (!exist) file.writeAsString('[]');
+    String contents = await file.readAsString();
     return recentFromJson(contents);
   }
 
@@ -74,10 +73,6 @@ class _RecentScanState extends State<RecentScan> {
                 ),
               ],
             ),
-          );
-        } else if (snapshot.connectionState == ConnectionState.none) {
-          return Center(
-            child: Text('Connect to the internet'),
           );
         } else {
           return Center(
