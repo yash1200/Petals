@@ -5,6 +5,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:petal/models/Recents.dart';
 import 'package:petal/models/Restaurant.dart';
+import 'package:provider/provider.dart';
+
+import '../RecentProvider.dart';
 
 class MenuWid extends StatefulWidget {
   Restaurant restaurant;
@@ -20,7 +23,8 @@ class _MenuWidState extends State<MenuWid> {
 
   _MenuWidState({this.restaurant});
 
-  void sendData() async {
+  void sendData(BuildContext context) async {
+    final provider = Provider.of<RecentProvider>(context);
     Directory directory = await getApplicationDocumentsDirectory();
     File file = File('${directory.path}/data.txt');
     String contents = await file.readAsString();
@@ -29,15 +33,16 @@ class _MenuWidState extends State<MenuWid> {
       if (element.id != restaurant.id) newRecent.add(element);
     });
     newRecent.insert(0, Recent(id: restaurant.id, name: restaurant.name));
+    provider.setRecent(newRecent);
     String newContent = recentToJson(newRecent);
     file.writeAsString(newContent);
   }
 
   @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    sendData();
+  void didChangeDependencies() {
+    // TODO: implement didChangeDependencies
+    super.didChangeDependencies();
+    sendData(context);
   }
 
   @override

@@ -1,6 +1,12 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:petal/RecentProvider.dart';
+import 'package:petal/models/Recents.dart';
 import 'package:petal/ui/ScarQr.dart';
 import 'package:petal/values/strings.dart';
+import 'package:provider/provider.dart';
 
 import 'RecentScan.dart';
 
@@ -10,6 +16,23 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  void getData(BuildContext context) async {
+    final provider = Provider.of<RecentProvider>(context, listen: false);
+    final directory = await getApplicationDocumentsDirectory();
+    File file = File('${directory.path}/data.txt');
+    bool exist = await file.exists();
+    if (!exist) file.writeAsString('[]');
+    String contents = await file.readAsString();
+    provider.setRecent(recentFromJson(contents));
+  }
+
+  @override
+  void didChangeDependencies() {
+    // TODO: implement didChangeDependencies
+    super.didChangeDependencies();
+    getData(context);
+  }
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -30,7 +53,8 @@ class _HomePageState extends State<HomePage> {
               Center(
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
                       return ScanQr();
                     }));
                   },

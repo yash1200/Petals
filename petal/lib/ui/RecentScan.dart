@@ -1,8 +1,6 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:petal/models/Recents.dart';
+import 'package:petal/RecentProvider.dart';
+import 'package:provider/provider.dart';
 
 import 'MenuScreen.dart';
 
@@ -12,74 +10,36 @@ class RecentScan extends StatefulWidget {
 }
 
 class _RecentScanState extends State<RecentScan> {
-  Future<List<Recent>> getData() async {
-    final directory = await getApplicationDocumentsDirectory();
-    File file = File('${directory.path}/data.txt');
-    bool exist = await file.exists();
-    if (!exist) file.writeAsString('[]');
-    String contents = await file.readAsString();
-    return recentFromJson(contents);
-  }
-
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
-    return FutureBuilder(
-      future: getData(),
-      builder: (context, snapshot) {
-        if (snapshot.hasData) {
-          return ListView.builder(
-            shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
-            itemCount: snapshot.data.length,
-            itemBuilder: (context, index) {
-              return Card(
-                child: ListTile(
-                  title: Text(snapshot.data[index].name),
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                      return MenuScreen(
-                        id: snapshot.data[index].id,
-                      );
-                    }));
-                  },
-                ),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-              );
-            },
-          );
-        } else if (snapshot.hasError) {
-          return Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Image.asset(
-                  'assets/error.png',
-                  height: size.width * 0.4,
-                  width: size.width * 0.4,
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  'OOPS! Something went wrong.',
-                  style: TextStyle(
-                    fontSize: 20,
-                  ),
-                ),
-              ],
+    final provider = Provider.of<RecentProvider>(context);
+    if (provider.getRecent() != null) {
+      return ListView.builder(
+        shrinkWrap: true,
+        physics: NeverScrollableScrollPhysics(),
+        itemCount: provider.getRecent().length,
+        itemBuilder: (context, index) {
+          return Card(
+            child: ListTile(
+              title: Text(provider.getRecent()[index].name),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return MenuScreen(
+                    id: provider.getRecent()[index].id,
+                  );
+                }));
+              },
+            ),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15),
             ),
           );
-        } else {
-          return Center(
-            child: CircularProgressIndicator(),
-          );
-        }
-      },
-    );
+        },
+      );
+    } else {
+      return Center(
+        child: CircularProgressIndicator(),
+      );
+    }
   }
 }
