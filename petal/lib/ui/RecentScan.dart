@@ -14,16 +14,19 @@ class RecentScan extends StatefulWidget {
 class _RecentScanState extends State<RecentScan> {
   Future<List<Recent>> getData() async {
     final directory = await getApplicationDocumentsDirectory();
-    File file;
-    String contents;
-    try {
-      file = File('${directory.path}/data.txt');
-      contents = await file.readAsString();
-    } catch (e) {
-      file = File('${directory.path}/data.txt');
+    File file=File('${directory.path}/data.txt');
+    bool exist=await file.exists();
+    if(!exist)
       file.writeAsString('[]');
-      contents = await file.readAsString();
-    }
+    String contents=await file.readAsString();
+//    try {
+//      file = File('${directory.path}/data.txt');
+//      contents = await file.readAsString();
+//    } catch (e) {
+//      file = File('${directory.path}/data.txt');
+//      file.writeAsString('[]');
+//      contents = await file.readAsString();
+//    }
     return recentFromJson(contents);
   }
 

@@ -22,14 +22,7 @@ class _MenuWidState extends State<MenuWid> {
 
   void sendData() async {
     Directory directory = await getApplicationDocumentsDirectory();
-    File file;
-    try {
-      file = File('${directory.path}/data.txt');
-    } catch (e) {
-      file = File('${directory.path}/data.txt');
-      file.writeAsString('[]');
-    }
-
+    File file = File('${directory.path}/data.txt');
     String contents = await file.readAsString();
     List<Recent> recents = recentFromJson(contents);
     if (recents.indexOf(Recent(id: restaurant.id, name: restaurant.name)) ==
