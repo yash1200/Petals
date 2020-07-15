@@ -25,6 +25,15 @@ class _MenuScreenState extends State<MenuScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Menu'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.refresh),
+            tooltip: 'Refresh',
+            onPressed: () {
+              setState(() {});
+            },
+          )
+        ],
       ),
       body: FutureBuilder(
         future: getData(),

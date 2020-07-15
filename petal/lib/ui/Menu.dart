@@ -1,5 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:petal/models/Recents.dart';
 import 'package:petal/models/Restaurant.dart';
 
 class MenuWid extends StatefulWidget {
@@ -15,6 +19,34 @@ class _MenuWidState extends State<MenuWid> {
   Restaurant restaurant;
 
   _MenuWidState({this.restaurant});
+
+  void sendData() async {
+    Directory directory = await getApplicationDocumentsDirectory();
+    File file;
+    try {
+      file = File('${directory.path}/data.txt');
+    } catch (e) {
+      file = File('${directory.path}/data.txt');
+      file.writeAsString('[]');
+    }
+
+    String contents = await file.readAsString();
+    List<Recent> recents = recentFromJson(contents);
+    if (recents.indexOf(Recent(id: restaurant.id, name: restaurant.name)) ==
+        -1) {
+      recents.remove(Recent(id: restaurant.id, name: restaurant.name));
+    }
+    recents.add(Recent(id: restaurant.id, name: restaurant.name));
+    String newContent = recentToJson(recents);
+    file.writeAsString(newContent);
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    sendData();
+  }
 
   @override
   Widget build(BuildContext context) {

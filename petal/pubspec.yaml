@@ -26,6 +26,7 @@ dependencies:
   qr_code_scanner:
   http:
   font_awesome_flutter:
+  path_provider:
 
 
   # The following adds the Cupertino Icons font to your application.

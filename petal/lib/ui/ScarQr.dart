@@ -29,20 +29,31 @@ class _ScanQrState extends State<ScanQr> {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         title: Text('Scan'),
       ),
-      body: QRView(
-        key: qrKey,
-        overlay: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
-          side: BorderSide(
-            color: Colors.green,
-            width: 2,
+      body: Stack(
+        children: [
+          QRView(
+            key: qrKey,
+            onQRViewCreated: _onQRViewCreated,
           ),
-        ),
-        onQRViewCreated: _onQRViewCreated,
+          Center(
+            child: Container(
+              height: size.width * 0.7,
+              width: size.width * 0.7,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                border: Border.all(
+                  width: 2,
+                  color: Colors.green,
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
