@@ -24,13 +24,12 @@ class _MenuWidState extends State<MenuWid> {
     Directory directory = await getApplicationDocumentsDirectory();
     File file = File('${directory.path}/data.txt');
     String contents = await file.readAsString();
-    List<Recent> recents = recentFromJson(contents);
-    if (recents.indexOf(Recent(id: restaurant.id, name: restaurant.name)) ==
-        -1) {
-      recents.remove(Recent(id: restaurant.id, name: restaurant.name));
-    }
-    recents.add(Recent(id: restaurant.id, name: restaurant.name));
-    String newContent = recentToJson(recents);
+    List<Recent> recents = recentFromJson(contents), newRecent = List<Recent>();
+    recents.forEach((element) {
+      if (element.id != restaurant.id) newRecent.add(element);
+    });
+    newRecent.insert(0, Recent(id: restaurant.id, name: restaurant.name));
+    String newContent = recentToJson(newRecent);
     file.writeAsString(newContent);
   }
 

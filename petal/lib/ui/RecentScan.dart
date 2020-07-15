@@ -19,14 +19,6 @@ class _RecentScanState extends State<RecentScan> {
     if(!exist)
       file.writeAsString('[]');
     String contents=await file.readAsString();
-//    try {
-//      file = File('${directory.path}/data.txt');
-//      contents = await file.readAsString();
-//    } catch (e) {
-//      file = File('${directory.path}/data.txt');
-//      file.writeAsString('[]');
-//      contents = await file.readAsString();
-//    }
     return recentFromJson(contents);
   }
 
@@ -53,6 +45,9 @@ class _RecentScanState extends State<RecentScan> {
                       );
                     }));
                   },
+                ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15),
                 ),
               );
             },
