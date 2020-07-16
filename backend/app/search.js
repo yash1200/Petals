@@ -3,7 +3,7 @@ const router = express.Router();
 const Petal = require("../models/petal");
 
 router.get("/search", function (req, res) {
-	console.log("Query: " + req.query.q);
+	//console.log("Query: " + req.query.q);
 	Petal.find(
 		{
 			name: {
