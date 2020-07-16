@@ -14,5 +14,6 @@ mongoose.Promise = global.Promise;
 
 app.use(bodyparser.json());
 app.use("/", require("./app/api"));
+app.use("/",require("./app/search"))
 
 app.listen(3000);

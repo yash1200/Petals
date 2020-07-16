@@ -5,6 +5,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:petal/provider/RecentProvider.dart';
 import 'package:petal/models/Recents.dart';
 import 'package:petal/ui/ScarQr.dart';
+import 'package:petal/ui/SearchPage.dart';
 import 'package:petal/values/strings.dart';
 import 'package:provider/provider.dart';
 
@@ -45,6 +46,16 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(Strings().appName),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return SearchPage();
+              }));
+            },
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         physics: BouncingScrollPhysics(),
