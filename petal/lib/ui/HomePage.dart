@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:petal/RecentProvider.dart';
+import 'package:petal/provider/RecentProvider.dart';
 import 'package:petal/models/Recents.dart';
 import 'package:petal/ui/ScarQr.dart';
 import 'package:petal/values/strings.dart';

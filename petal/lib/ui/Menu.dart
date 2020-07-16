@@ -7,7 +7,7 @@ import 'package:petal/models/Recents.dart';
 import 'package:petal/models/Restaurant.dart';
 import 'package:provider/provider.dart';
 
-import '../RecentProvider.dart';
+import '../provider/RecentProvider.dart';
 
 class MenuWid extends StatefulWidget {
   Restaurant restaurant;
