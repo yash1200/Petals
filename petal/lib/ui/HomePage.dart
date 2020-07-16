@@ -21,9 +21,15 @@ class _HomePageState extends State<HomePage> {
     final directory = await getApplicationDocumentsDirectory();
     File file = File('${directory.path}/data.txt');
     bool exist = await file.exists();
-    if (!exist) file.writeAsString('[]');
-    String contents = await file.readAsString();
-    provider.setRecent(recentFromJson(contents));
+    if (!exist) {
+      file.create().then((value) {
+        value.writeAsString('[]');
+      });
+      provider.setRecent(recentFromJson('[]'));
+    } else {
+      String contents = await file.readAsString();
+      provider.setRecent(recentFromJson(contents));
+    }
   }
 
   @override
