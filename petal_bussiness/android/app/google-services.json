@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "241547397429",
+    "firebase_url": "https://petal-60847.firebaseio.com",
+    "project_id": "petal-60847",
+    "storage_bucket": "petal-60847.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:241547397429:android:22ab77d8621e82ae4e247c",
+        "android_client_info": {
+          "package_name": "com.example.petal_bussiness"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "241547397429-3sf77ilrh99qqif4j0lbqbolia2g7b1k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.petal_bussiness",
+            "certificate_hash": "aee2a00072dbd078af4d38f68c425dee4d919fcc"
+          }
+        },
+        {
+          "client_id": "241547397429-63ov6f65e36513tglmcdp1vvgn692sm2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFbtg7LKV4Q_rLMB9z1qEQHTV7_nK7f7w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "241547397429-63ov6f65e36513tglmcdp1vvgn692sm2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
