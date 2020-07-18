@@ -59,7 +59,9 @@ class _LoginState extends State<Login> {
                     verifyPhoneNumber(phoneController.text, context);
                     Navigator.pushReplacement(context,
                         MaterialPageRoute(builder: (context) {
-                      return Confirm();
+                      return Confirm(
+                        phone: phoneController.text,
+                      );
                     }));
                   }
                 },

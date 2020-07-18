@@ -6,6 +6,10 @@ import 'package:provider/provider.dart';
 import 'CheckUser.dart';
 
 class Confirm extends StatefulWidget {
+  String phone;
+
+  Confirm({this.phone});
+
   @override
   _ConfirmState createState() => _ConfirmState();
 }
@@ -60,14 +64,10 @@ class _ConfirmState extends State<Confirm> {
                     signInWithPhoneNumber(
                       codeController.text,
                       provider.verifyId,
-                      context,
                     ).then(
-                      (value) => () {
+                          (value) {
                         if (value) {
-                          Navigator.pushReplacement(context,
-                              MaterialPageRoute(builder: (context) {
-                                return CheckUser();
-                          }));
+                          checkUser(context, widget.phone);
                         } else {
                           scaffoldKey.currentState.showSnackBar(
                             SnackBar(

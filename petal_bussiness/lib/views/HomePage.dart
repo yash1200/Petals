@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,7 +14,12 @@ class _HomePageState extends State<HomePage> {
         title: Text('Petals'),
       ),
       body: Center(
-        child: Text('Home'),
+        child: FlatButton(
+          onPressed: () {
+            FirebaseAuth.instance.signOut();
+          },
+          child: Text('Sign Out'),
+        ),
       ),
     );
   }

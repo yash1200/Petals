@@ -6,7 +6,6 @@ import 'package:provider/provider.dart';
 void verifyPhoneNumber(String phone, BuildContext context) async {
   final provider = Provider.of<LoginProvider>(context, listen: false);
   var _verificationId;
-  print(phone);
 
   final PhoneVerificationCompleted verificationCompleted =
       (AuthCredential phoneAuthCredential) {};
@@ -17,8 +16,6 @@ void verifyPhoneNumber(String phone, BuildContext context) async {
   final PhoneCodeSent codeSent =
       (String verificationId, [int forceResendingToken]) async {
     _verificationId = verificationId;
-    print("Code sent");
-    print("Verification ID: " + verificationId);
     provider.setVerifyId(_verificationId);
   };
 
@@ -38,28 +35,16 @@ void verifyPhoneNumber(String phone, BuildContext context) async {
   );
 }
 
-Future<bool> signInWithPhoneNumber(
-    String otp, String verificationId, BuildContext context) async {
-  try {
-    final AuthCredential credential = PhoneAuthProvider.getCredential(
-      verificationId: verificationId,
-      smsCode: otp,
-    );
-    AuthResult authResult =
-        await FirebaseAuth.instance.signInWithCredential(credential);
-    FirebaseUser user = authResult.user;
-    final FirebaseUser currentUser = await FirebaseAuth.instance.currentUser();
-    assert(user.uid == currentUser.uid);
-    if (user != null) {
-      return true;
-    } else {
-      return false;
-    }
-  } catch (e) {
-    print(e);
-    print('Failed');
-    return false;
-  }
+Future<bool> signInWithPhoneNumber(String otp, String verificationId) async {
+  final AuthCredential credential = PhoneAuthProvider.getCredential(
+    verificationId: verificationId,
+    smsCode: otp,
+  );
+  AuthResult authResult =
+      await FirebaseAuth.instance.signInWithCredential(credential);
+  FirebaseUser user = authResult.user;
+  if (user != null) return true;
+  return false;
 }
 
 Future<FirebaseUser> getUser() async {

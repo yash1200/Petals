@@ -10,8 +10,11 @@ Future<bool> checkUserExists(String phone) async {
 }
 
 Future<bool> postRestaurant(Restaurant restaurant) async {
-  var response = await http.post(Strings().url);
-  print(response.body);
+  var response = await http.post(
+    Strings().url,
+    headers: {"Content-Type": "application/json"},
+    body: restaurantToJson(restaurant),
+  );
   if (response.statusCode == 200) return true;
   return false;
 }
