@@ -9,9 +9,9 @@ router.get("/petal/:id", function (req, res) {
 	});
 });
 
-router.post("/petal/:id", function (req, res) {
+router.post("/petal", function (req, res) {
 	Petal.create(req.body).then((petal) => {
-		res.send(petal);
+		res.status(200).send(petal);
 		console.log("Post Request made");
 	});
 });

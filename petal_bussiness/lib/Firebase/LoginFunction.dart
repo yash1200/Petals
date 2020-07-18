@@ -61,3 +61,8 @@ Future<bool> signInWithPhoneNumber(
     return false;
   }
 }
+
+Future<FirebaseUser> getUser() async {
+  FirebaseUser firebaseUser = await FirebaseAuth.instance.currentUser();
+  return firebaseUser;
+}

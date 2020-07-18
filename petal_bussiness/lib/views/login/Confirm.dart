@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:petal_bussiness/Firebase/LoginFunction.dart';
 import 'package:petal_bussiness/Provider/LoginProvider.dart';
-import 'package:petal_bussiness/views/HomePage.dart';
 import 'package:provider/provider.dart';
+
+import 'CheckUser.dart';
 
 class Confirm extends StatefulWidget {
   @override
@@ -37,8 +38,8 @@ class _ConfirmState extends State<Confirm> {
                 },
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                  hintText: 'XXXX',
-                  labelText: 'conformational Code',
+                  hintText: 'XXXXXX',
+                  labelText: 'Conformational Code',
                   alignLabelWithHint: true,
                   prefixIcon: Icon(Icons.security),
                   border: OutlineInputBorder(
@@ -65,7 +66,7 @@ class _ConfirmState extends State<Confirm> {
                         if (value) {
                           Navigator.pushReplacement(context,
                               MaterialPageRoute(builder: (context) {
-                            return HomePage();
+                                return CheckUser();
                           }));
                         } else {
                           scaffoldKey.currentState.showSnackBar(
