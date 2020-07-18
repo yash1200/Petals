@@ -1,4 +1,3 @@
-import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
 import 'package:petal_bussiness/Firebase/LoginFunction.dart';
 import 'package:petal_bussiness/views/login/Confirm.dart';
