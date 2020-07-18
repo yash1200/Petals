@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 void verifyPhoneNumber(String phone, BuildContext context) async {
   final provider = Provider.of<LoginProvider>(context, listen: false);
   var _verificationId;
+  print(phone);
 
   final PhoneVerificationCompleted verificationCompleted =
       (AuthCredential phoneAuthCredential) {};
@@ -16,6 +17,7 @@ void verifyPhoneNumber(String phone, BuildContext context) async {
   final PhoneCodeSent codeSent =
       (String verificationId, [int forceResendingToken]) async {
     _verificationId = verificationId;
+    print("Code sent");
     print("Verification ID: " + verificationId);
     provider.setVerifyId(_verificationId);
   };
@@ -25,13 +27,15 @@ void verifyPhoneNumber(String phone, BuildContext context) async {
     _verificationId = verificationId;
   };
 
+  print(_verificationId);
   await FirebaseAuth.instance.verifyPhoneNumber(
-      phoneNumber: "+91" + phone,
-      timeout: const Duration(seconds: 5),
-      verificationCompleted: verificationCompleted,
-      verificationFailed: verificationFailed,
-      codeSent: codeSent,
-      codeAutoRetrievalTimeout: codeAutoRetrievalTimeout);
+    phoneNumber: "+91" + phone,
+    timeout: const Duration(seconds: 5),
+    verificationCompleted: verificationCompleted,
+    verificationFailed: verificationFailed,
+    codeSent: codeSent,
+    codeAutoRetrievalTimeout: codeAutoRetrievalTimeout,
+  );
 }
 
 Future<bool> signInWithPhoneNumber(
