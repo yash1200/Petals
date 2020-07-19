@@ -21,15 +21,16 @@ class CustomCard extends StatelessWidget {
         );
       },
       child: Container(
-        height: size.width * 0.45,
-        width: size.width * 0.45,
+        height: size.width * 0.47,
+        width: size.width * 0.47,
         child: Card(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
                 "assets/$image",
-                height: size.width * 0.3,
-                width: size.width * 0.3,
+                height: size.width * 0.25,
+                width: size.width * 0.25,
               ),
               SizedBox(
                 height: 20,

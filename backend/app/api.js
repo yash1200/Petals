@@ -26,7 +26,7 @@ router.post("/petal", function (req, res) {
 router.put("/petal/:id", function (req, res) {
 	Petal.findByIdAndUpdate({ _id: req.params.id }, req.body).then(() => {
 		Petal.findOne({ _id: req.params.id }).then(function (petal) {
-			res.send(petal);
+			res.status(200).send(petal);
 			console.log("Restaurent Updated");
 		});
 	});

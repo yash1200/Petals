@@ -3,6 +3,7 @@ import 'dart:typed_data';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:petal_bussiness/Widgets/ShowSnackBar.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 void saveQrCode(var key, String text) async {
@@ -11,17 +12,7 @@ void saveQrCode(var key, String text) async {
     File file = File("/storage/emulated/0/Download/qr_image.png");
     var a = await _getWidgetImage(text);
     file.writeAsBytes(a);
-    key.currentState.showSnackBar(
-      SnackBar(
-        backgroundColor: Colors.black45,
-        content: Text(
-          'QR Code Saved in Downloads Folder',
-          style: TextStyle(
-            color: Colors.white38,
-          ),
-        ),
-      ),
-    );
+    showSnackBar(key, 'QR Code Saved in Downloads Folder');
   }
 }
 

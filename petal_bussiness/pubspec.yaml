@@ -26,7 +26,6 @@ dependencies:
   http:
   firebase_auth:
   qr_flutter:
-  downloads_path_provider:
   permission_handler:
   provider:
 

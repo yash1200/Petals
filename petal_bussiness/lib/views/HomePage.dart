@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:petal_bussiness/Api_calls/ApiCall.dart';
 import 'package:petal_bussiness/Provider/RestaurantProvider.dart';
 import 'package:petal_bussiness/Widgets/CustomCard.dart';
+import 'package:petal_bussiness/views/EditInfo.dart';
 import 'package:petal_bussiness/views/GetQr.dart';
 import 'package:provider/provider.dart';
 
@@ -27,7 +28,7 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               CustomCard(
                 image: "qr-code.png",
@@ -35,9 +36,9 @@ class _HomePageState extends State<HomePage> {
                 intent: GetQr(),
               ),
               CustomCard(
-                image: "qr-code.png",
-                text: "Get QR Code",
-                intent: GetQr(),
+                image: "edit_profile.png",
+                text: "Edit Your Info",
+                intent: EditInfo(),
               ),
             ],
           ),

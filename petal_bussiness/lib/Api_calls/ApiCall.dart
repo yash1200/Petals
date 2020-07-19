@@ -22,10 +22,19 @@ Future<bool> postRestaurant(Restaurant restaurant) async {
   return false;
 }
 
+Future<bool> updateRestaurant(Restaurant restaurant) async {
+  var response = await http.put(
+    Strings().url + restaurant.id,
+    headers: {"Content-Type": "application/json"},
+    body: restaurantToJson(restaurant),
+  );
+  if (response.statusCode == 200) return true;
+  return false;
+}
+
 Future<void> setRestaurant(BuildContext context) async {
   final provider = Provider.of<RestaurantProvider>(context, listen: false);
   FirebaseUser firebaseUser = await FirebaseAuth.instance.currentUser();
   var response = await http.get(Strings().ownerUrl + firebaseUser.uid);
-  print(response.body);
   provider.setRestaurant(restaurantFromJson(response.body));
 }
