@@ -1,7 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:petal_bussiness/Model/Restaurant.dart';
+import 'package:petal_bussiness/Provider/RestaurantProvider.dart';
 import 'package:petal_bussiness/values/Strings.dart';
+import 'package:provider/provider.dart';
 
 Future<bool> checkUserExists(String phone) async {
   var response = await http.get(Strings().checkUrl + "?phone=$phone");
@@ -17,4 +20,12 @@ Future<bool> postRestaurant(Restaurant restaurant) async {
   );
   if (response.statusCode == 200) return true;
   return false;
+}
+
+Future<void> setRestaurant(BuildContext context) async {
+  final provider = Provider.of<RestaurantProvider>(context, listen: false);
+  FirebaseUser firebaseUser = await FirebaseAuth.instance.currentUser();
+  var response = await http.get(Strings().ownerUrl + firebaseUser.uid);
+  print(response.body);
+  provider.setRestaurant(restaurantFromJson(response.body));
 }

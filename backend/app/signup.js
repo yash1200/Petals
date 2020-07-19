@@ -3,7 +3,6 @@ const router = express.Router();
 const Petal = require("../models/petal");
 
 router.get("/check", function (req, res) {
-	console.log(req.query.phone);
 	Petal.findOne(
 		{
 			phone: req.query.phone,

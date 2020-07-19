@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:petal_bussiness/Provider/LoginProvider.dart';
+import 'package:petal_bussiness/Provider/RestaurantProvider.dart';
 import 'package:petal_bussiness/views/HomePage.dart';
 import 'package:petal_bussiness/views/login/Login.dart';
 import 'package:provider/provider.dart';
@@ -14,8 +15,15 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => LoginProvider(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => LoginProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => RestaurantProvider(),
+        ),
+      ],
       child: MaterialApp(
         title: 'Petals Business',
         debugShowCheckedModeBanner: false,

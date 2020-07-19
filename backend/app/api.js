@@ -9,8 +9,14 @@ router.get("/petal/:id", function (req, res) {
 	});
 });
 
+router.get("/petal/owner/:id", function (req, res) {
+	Petal.findOne({ ownerId: req.params.id }).then(function (petal) {
+		res.status(200).send(petal);
+		console.log("Get Owner request made");
+	});
+});
+
 router.post("/petal", function (req, res) {
-	console.log(req.body);
 	Petal.create(req.body).then((petal) => {
 		res.status(200).send(petal);
 		console.log("Post Request made");
