@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:petal_bussiness/Provider/LoginProvider.dart';
+import 'package:petal_bussiness/views/login/Login.dart';
 import 'package:provider/provider.dart';
 
 void verifyPhoneNumber(String phone, BuildContext context) async {
@@ -50,4 +51,17 @@ Future<bool> signInWithPhoneNumber(String otp, String verificationId) async {
 Future<FirebaseUser> getUser() async {
   FirebaseUser firebaseUser = await FirebaseAuth.instance.currentUser();
   return firebaseUser;
+}
+
+void firebaseLogOut(BuildContext context) {
+  FirebaseAuth.instance.signOut();
+  Navigator.of(context).popUntil((route) => route.isFirst);
+  Navigator.push(
+    context,
+    MaterialPageRoute(
+      builder: (context) {
+        return Login();
+      },
+    ),
+  );
 }

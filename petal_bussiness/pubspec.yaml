@@ -26,6 +26,7 @@ dependencies:
   http:
   firebase_auth:
   qr_flutter:
+  font_awesome_flutter:
   permission_handler:
   provider:
 

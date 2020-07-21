@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:petal_bussiness/Widgets/CustomDialog.dart';
 import 'package:petal_bussiness/Widgets/CustomListTile.dart';
 import 'package:petal_bussiness/views/EditInfo.dart';
@@ -22,6 +23,9 @@ class _AccountSettingState extends State<AccountSetting> {
         padding: EdgeInsets.only(left: 10, right: 10),
         child: Column(
           children: [
+            SizedBox(
+              height: 10,
+            ),
             CustomListTile(
               title: 'Edit Your Profile',
               onTap: () {
@@ -34,6 +38,13 @@ class _AccountSettingState extends State<AccountSetting> {
             CustomListTile(
               title: 'Delete Your Account',
               icon: Icons.delete,
+              onTap: () {
+                showDeleteDialog(context, _scaffoldKey);
+              },
+            ),
+            CustomListTile(
+              title: 'log Out',
+              icon: FontAwesomeIcons.signOutAlt,
               onTap: () {
                 showDeleteDialog(context, _scaffoldKey);
               },

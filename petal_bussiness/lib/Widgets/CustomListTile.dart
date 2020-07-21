@@ -15,6 +15,9 @@ class CustomListTile extends StatelessWidget {
         leading: Icon(icon),
         onTap: onTap,
       ),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+      ),
     );
   }
 }

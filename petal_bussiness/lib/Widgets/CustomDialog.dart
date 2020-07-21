@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:petal_bussiness/Api_calls/ApiCall.dart';
+import 'package:petal_bussiness/Firebase/LoginFunction.dart';
 import 'package:petal_bussiness/Provider/RestaurantProvider.dart';
 import 'package:petal_bussiness/Widgets/ShowSnackBar.dart';
 import 'package:petal_bussiness/views/login/Login.dart';
@@ -26,12 +27,7 @@ void showDeleteDialog(BuildContext context, var key) {
           onPressed: () {
             deleteRestaurant(provider.restaurant).then((value) {
               if (value) {
-                Navigator.pop(context);
-                Navigator.pop(context);
-                Navigator.pop(context);
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return Login();
-                }));
+                firebaseLogOut(context);
               } else {
                 showSnackBar(key, 'Something Went wrong!');
               }

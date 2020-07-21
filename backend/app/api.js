@@ -34,7 +34,7 @@ router.put("/petal/:id", function (req, res) {
 
 router.delete("/petal/:id", function (req, res) {
 	Petal.findByIdAndRemove({ _id: req.params.id }).then(function (petal) {
-		res.send(petal);
+		res.status(200).send(petal);
 		console.log("Restaurent removed");
 	});
 });
