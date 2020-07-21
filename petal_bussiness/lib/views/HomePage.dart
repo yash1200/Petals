@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:petal_bussiness/Api_calls/ApiCall.dart';
-import 'package:petal_bussiness/Provider/RestaurantProvider.dart';
 import 'package:petal_bussiness/Widgets/CustomCard.dart';
-import 'package:petal_bussiness/views/EditInfo.dart';
+import 'package:petal_bussiness/views/AccountSetting.dart';
 import 'package:petal_bussiness/views/GetQr.dart';
-import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -36,9 +34,9 @@ class _HomePageState extends State<HomePage> {
                 intent: GetQr(),
               ),
               CustomCard(
-                image: "edit_profile.png",
-                text: "Edit Your Info",
-                intent: EditInfo(),
+                image: "system.png",
+                text: "Account Settings",
+                intent: AccountSetting(),
               ),
             ],
           ),

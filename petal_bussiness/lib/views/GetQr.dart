@@ -14,7 +14,7 @@ class _GetQrState extends State<GetQr> {
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<RestaurantProvider>(context);
+    final provider = Provider.of<RestaurantProvider>(context, listen: false);
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(

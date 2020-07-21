@@ -32,6 +32,15 @@ Future<bool> updateRestaurant(Restaurant restaurant) async {
   return false;
 }
 
+Future<bool> deleteRestaurant(Restaurant restaurant) async {
+  var response = await http.delete(
+    Strings().url + restaurant.id,
+    headers: {"Content-Type": "application/json"},
+  );
+  if (response.statusCode == 200) return true;
+  return false;
+}
+
 Future<void> setRestaurant(BuildContext context) async {
   final provider = Provider.of<RestaurantProvider>(context, listen: false);
   FirebaseUser firebaseUser = await FirebaseAuth.instance.currentUser();
