@@ -40,6 +40,7 @@ class _ConfirmState extends State<Confirm> {
                 onTap: () {
                   key.currentState.reset();
                 },
+                obscureText: true,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
                   hintText: 'XXXXXX',

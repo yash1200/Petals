@@ -55,7 +55,9 @@ Future<FirebaseUser> getUser() async {
 
 void firebaseLogOut(BuildContext context) {
   FirebaseAuth.instance.signOut();
-  Navigator.of(context).popUntil((route) => route.isFirst);
+  Navigator.pop(context);
+  Navigator.pop(context);
+  Navigator.pop(context);
   Navigator.push(
     context,
     MaterialPageRoute(

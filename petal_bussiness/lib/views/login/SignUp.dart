@@ -99,7 +99,7 @@ class _SignUpState extends State<SignUp> {
                         name: resNameController.text,
                         owner: nameController.text,
                         email: emailController?.text,
-                        phone: firebaseUser.phoneNumber,
+                        phone: firebaseUser.phoneNumber.substring(3),
                         ownerId: firebaseUser.uid,
                         menus: [],
                       );

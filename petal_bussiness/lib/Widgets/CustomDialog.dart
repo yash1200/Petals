@@ -3,7 +3,6 @@ import 'package:petal_bussiness/Api_calls/ApiCall.dart';
 import 'package:petal_bussiness/Firebase/LoginFunction.dart';
 import 'package:petal_bussiness/Provider/RestaurantProvider.dart';
 import 'package:petal_bussiness/Widgets/ShowSnackBar.dart';
-import 'package:petal_bussiness/views/login/Login.dart';
 import 'package:provider/provider.dart';
 
 void showDeleteDialog(BuildContext context, var key) {
