@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:petal_bussiness/Api_calls/SaveQr.dart';
 import 'package:petal_bussiness/Provider/RestaurantProvider.dart';
+import 'package:petal_bussiness/Widgets/ConnectionError.dart';
 import 'package:provider/provider.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
@@ -31,9 +32,11 @@ class _GetQrState extends State<GetQr> {
         ],
       ),
       body: Center(
-        child: QrImage(
-          data: provider.restaurant.id,
-        ),
+        child: provider.restaurant != null
+            ? QrImage(
+                data: provider.restaurant.id,
+              )
+            : ConnectionError(),
       ),
     );
   }

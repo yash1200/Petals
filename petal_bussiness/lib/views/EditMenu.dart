@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:petal_bussiness/Api_calls/ApiCall.dart';
 import 'package:petal_bussiness/Provider/RestaurantProvider.dart';
+import 'package:petal_bussiness/Widgets/ConnectionError.dart';
 import 'package:petal_bussiness/Widgets/CustomFlatButton.dart';
 import 'package:petal_bussiness/Widgets/addItemDialog.dart';
 import 'package:petal_bussiness/Widgets/addMenuDialog.dart';
@@ -32,65 +33,70 @@ class _EditMenuState extends State<EditMenu> {
           ),
         ],
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            for (int i = 0; i < provider.menu.length; i++)
-              ExpansionTile(
-                title: Text(provider.menu[i].type),
+      body: provider.restaurant != null
+          ? SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  for (int j = 0; j < provider.menu[i].items.length; j++)
-                    ListTile(
-                      title: Text(provider.menu[i].items[j].name),
-                      trailing: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Icon(
-                            FontAwesomeIcons.rupeeSign,
-                            size: 12,
+                  for (int i = 0; i < provider.menu.length; i++)
+                    ExpansionTile(
+                      title: Text(provider.menu[i].type),
+                      children: [
+                        for (int j = 0; j < provider.menu[i].items.length; j++)
+                          ListTile(
+                            title: Text(provider.menu[i].items[j].name),
+                            trailing: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(
+                                  FontAwesomeIcons.rupeeSign,
+                                  size: 12,
+                                ),
+                                SizedBox(
+                                  width: 4,
+                                ),
+                                Text(
+                                    provider.menu[i].items[j].price.toString()),
+                              ],
+                            ),
+                            onLongPress: () {
+                              deleteItemDialog(context, i, j);
+                            },
                           ),
-                          SizedBox(
-                            width: 4,
-                          ),
-                          Text(provider.menu[i].items[j].price.toString()),
-                        ],
-                      ),
-                      onLongPress: () {
-                        deleteItemDialog(context, i, j);
-                      },
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            CustomFlatButton(
+                              onTap: () {
+                                addItemDialog(context, i);
+                              },
+                              text: "Add Item",
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            CustomFlatButton(
+                              onTap: () {
+                                deleteTypeDialog(context, i);
+                              },
+                              text: "Delete Type",
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      CustomFlatButton(
-                        onTap: () {
-                          addItemDialog(context, i);
-                        },
-                        text: "Add Item",
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      CustomFlatButton(
-                        onTap: () {
-                          deleteTypeDialog(context, i);
-                        },
-                        text: "Delete Type",
-                      ),
-                    ],
+                  CustomFlatButton(
+                    onTap: () {
+                      addMenuDialog(context);
+                    },
+                    text: "Add",
                   ),
                 ],
               ),
-            CustomFlatButton(
-              onTap: () {
-                addMenuDialog(context);
-              },
-              text: "Add",
+            )
+          : Center(
+              child: ConnectionError(),
             ),
-          ],
-        ),
-      ),
     );
   }
 }
