@@ -1,16 +1,19 @@
-# petal
+# Petal
 
-A new Flutter project.
+Petal is an app with which we can get details like menu, name of owner, phone, email and other details of a restaurant just by scanning a QR-code at the restaurant or by searching it by its name.
 
-## Getting Started
+## Home Screen
 
-This project is a starting point for a Flutter application.
+<img src="https://imgur.com/CkgbR7u.png" height="600">
 
-A few resources to get you started if this is your first Flutter project:
+## Scan Screen
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+<img src="https://imgur.com/oF94Jsi.png" height="600">
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Search Screen
+
+<img src="https://imgur.com/UFSAV7Q.png" height="600">
+
+## Details Screen
+
+<img src="https://imgur.com/gv2eOyp.png" height="600">
