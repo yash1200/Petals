@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:petal_bussiness/Provider/RestaurantProvider.dart';
 import 'package:petal_bussiness/Widgets/addItemDialog.dart';
 import 'package:petal_bussiness/Widgets/addMenuDialog.dart';
+import 'package:petal_bussiness/Widgets/deleteItemDialog.dart';
+import 'package:petal_bussiness/Widgets/deleteTpeDialog.dart';
 import 'package:provider/provider.dart';
 
 class EditMenu extends StatefulWidget {
@@ -16,6 +18,12 @@ class _EditMenuState extends State<EditMenu> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Edit Menu'),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.save),
+          ),
+        ],
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -28,12 +36,29 @@ class _EditMenuState extends State<EditMenu> {
                   ListTile(
                     title: Text(provider.menu[i].items[j].name),
                     trailing: Text(provider.menu[i].items[j].price.toString()),
+                    onLongPress: () {
+                      deleteItemDialog(context, i, j);
+                    },
                   ),
-                FlatButton(
-                  onPressed: () {
-                    addItemDialog(context, i);
-                  },
-                  child: Text('Add Item'),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    FlatButton(
+                      onPressed: () {
+                        addItemDialog(context, i);
+                      },
+                      child: Text('Add Item'),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    FlatButton(
+                      onPressed: () {
+                        deleteTypeDialog(context, i);
+                      },
+                      child: Text('Delete Type'),
+                    ),
+                  ],
                 ),
               ],
             ),

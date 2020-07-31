@@ -14,18 +14,28 @@ class RestaurantProvider with ChangeNotifier {
 
   List<Menu> get menu => _menu;
 
-  void addMenu(Menu m) {
-    menu.add(m);
-    notifyListeners();
-  }
-
   void addItem(Item item, int index) {
     menu[index].items.add(item);
     notifyListeners();
   }
 
+  void deleteItem(int index, int itemIndex) {
+    menu[index].items.removeAt(itemIndex);
+    notifyListeners();
+  }
+
+  void addMenu(Menu m) {
+    menu.add(m);
+    notifyListeners();
+  }
+
   void setMenu(List<Menu> value) {
     _menu = value;
+    notifyListeners();
+  }
+
+  void deleteMenu(int index) {
+    menu.removeAt(index);
     notifyListeners();
   }
 }
