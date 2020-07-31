@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:petal_bussiness/Model/Restaurant.dart';
-import 'package:petal_bussiness/Provider/RestaurantProvider.dart';
+import 'package:petal_business/Model/Restaurant.dart';
+import 'package:petal_business/Provider/RestaurantProvider.dart';
 import 'package:provider/provider.dart';
 
 void addMenuDialog(BuildContext context) {

@@ -1,9 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:petal_bussiness/Api_calls/ApiCall.dart';
-import 'package:petal_bussiness/Model/Restaurant.dart';
-import 'package:petal_bussiness/Widgets/CustomFlatButton.dart';
-import 'package:petal_bussiness/views/HomePage.dart';
+import 'package:petal_business/Api_calls/ApiCall.dart';
+import 'package:petal_business/Model/Restaurant.dart';
+import 'package:petal_business/Widgets/CustomFlatButton.dart';
+import 'package:petal_business/views/HomePage.dart';
 
 class SignUp extends StatefulWidget {
   @override

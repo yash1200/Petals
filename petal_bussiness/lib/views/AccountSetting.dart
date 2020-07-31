@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:petal_bussiness/Widgets/CustomDialog.dart';
-import 'package:petal_bussiness/Widgets/CustomListTile.dart';
-import 'package:petal_bussiness/Widgets/showLogOutDialog.dart';
-import 'package:petal_bussiness/views/EditInfo.dart';
+import 'package:petal_business/Widgets/CustomDialog.dart';
+import 'package:petal_business/Widgets/CustomListTile.dart';
+import 'package:petal_business/Widgets/showLogOutDialog.dart';
+import 'package:petal_business/views/EditInfo.dart';
 
 class AccountSetting extends StatefulWidget {
   @override

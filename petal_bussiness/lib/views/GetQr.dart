@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:petal_bussiness/Api_calls/SaveQr.dart';
-import 'package:petal_bussiness/Provider/RestaurantProvider.dart';
-import 'package:petal_bussiness/Widgets/ConnectionError.dart';
+import 'package:petal_business/Api_calls/SaveQr.dart';
+import 'package:petal_business/Provider/RestaurantProvider.dart';
+import 'package:petal_business/Widgets/ConnectionError.dart';
 import 'package:provider/provider.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 

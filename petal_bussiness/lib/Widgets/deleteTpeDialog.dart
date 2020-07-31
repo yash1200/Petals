@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:petal_bussiness/Provider/RestaurantProvider.dart';
+import 'package:petal_business/Provider/RestaurantProvider.dart';
 import 'package:provider/provider.dart';
 
 void deleteTypeDialog(BuildContext context, int index) {

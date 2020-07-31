@@ -1,9 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:petal_bussiness/Model/Restaurant.dart';
-import 'package:petal_bussiness/Provider/RestaurantProvider.dart';
-import 'package:petal_bussiness/values/Strings.dart';
+import 'package:petal_business/Model/Restaurant.dart';
+import 'package:petal_business/Provider/RestaurantProvider.dart';
+import 'package:petal_business/values/Strings.dart';
 import 'package:provider/provider.dart';
 
 Future<bool> checkUserExists(String phone) async {

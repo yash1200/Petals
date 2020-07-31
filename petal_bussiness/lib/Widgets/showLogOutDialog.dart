@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:petal_bussiness/Firebase/LoginFunction.dart';
+import 'package:petal_business/Firebase/LoginFunction.dart';
 
 void showLogOutDialog(BuildContext context) {
   showDialog(

@@ -3,7 +3,7 @@ import 'dart:typed_data';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:petal_bussiness/Widgets/ShowSnackBar.dart';
+import 'package:petal_business/Widgets/ShowSnackBar.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 void saveQrCode(var key, String text) async {

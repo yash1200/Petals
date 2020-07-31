@@ -1,9 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:petal_bussiness/Provider/LoginProvider.dart';
-import 'package:petal_bussiness/Provider/RestaurantProvider.dart';
-import 'package:petal_bussiness/views/HomePage.dart';
-import 'package:petal_bussiness/views/login/Login.dart';
+import 'package:petal_business/Provider/LoginProvider.dart';
+import 'package:petal_business/Provider/RestaurantProvider.dart';
+import 'package:petal_business/views/HomePage.dart';
+import 'package:petal_business/views/login/Login.dart';
 import 'package:provider/provider.dart';
 
 void main() {

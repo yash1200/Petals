@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:petal_bussiness/Model/Restaurant.dart';
-import 'package:petal_bussiness/Provider/RestaurantProvider.dart';
-import 'package:petal_bussiness/Widgets/ShowSnackBar.dart';
+import 'package:petal_business/Model/Restaurant.dart';
+import 'package:petal_business/Provider/RestaurantProvider.dart';
+import 'package:petal_business/Widgets/ShowSnackBar.dart';
 import 'package:provider/provider.dart';
 
 import 'ApiCall.dart';

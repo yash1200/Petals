@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:petal_bussiness/Firebase/LoginFunction.dart';
-import 'package:petal_bussiness/Widgets/CustomFlatButton.dart';
-import 'package:petal_bussiness/views/login/Confirm.dart';
+import 'package:petal_business/Firebase/LoginFunction.dart';
+import 'package:petal_business/Widgets/CustomFlatButton.dart';
+import 'package:petal_business/views/login/Confirm.dart';
 
 class Login extends StatefulWidget {
   @override

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:petal_bussiness/Firebase/LoginFunction.dart';
-import 'package:petal_bussiness/Provider/LoginProvider.dart';
-import 'package:petal_bussiness/Widgets/CustomFlatButton.dart';
+import 'package:petal_business/Firebase/LoginFunction.dart';
+import 'package:petal_business/Provider/LoginProvider.dart';
+import 'package:petal_business/Widgets/CustomFlatButton.dart';
 import 'package:provider/provider.dart';
 
 import 'CheckUser.dart';

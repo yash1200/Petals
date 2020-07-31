@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:petal_bussiness/Api_calls/UpdateInfo.dart';
-import 'package:petal_bussiness/Provider/RestaurantProvider.dart';
+import 'package:petal_business/Api_calls/UpdateInfo.dart';
+import 'package:petal_business/Provider/RestaurantProvider.dart';
 import 'package:provider/provider.dart';
 
 class EditInfo extends StatefulWidget {

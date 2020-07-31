@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:petal_bussiness/Api_calls/ApiCall.dart';
-import 'package:petal_bussiness/views/HomePage.dart';
-import 'package:petal_bussiness/views/login/SignUp.dart';
+import 'package:petal_business/Api_calls/ApiCall.dart';
+import 'package:petal_business/views/HomePage.dart';
+import 'package:petal_business/views/login/SignUp.dart';
 
 void checkUser(BuildContext context, String phone) async {
   bool user = await checkUserExists(phone);

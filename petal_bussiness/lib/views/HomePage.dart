@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:petal_bussiness/Api_calls/ApiCall.dart';
-import 'package:petal_bussiness/Widgets/CustomCard.dart';
-import 'package:petal_bussiness/views/About.dart';
-import 'package:petal_bussiness/views/AccountSetting.dart';
-import 'package:petal_bussiness/views/EditMenu.dart';
-import 'package:petal_bussiness/views/GetQr.dart';
+import 'package:petal_business/Api_calls/ApiCall.dart';
+import 'package:petal_business/Widgets/CustomCard.dart';
+import 'package:petal_business/views/About.dart';
+import 'package:petal_business/views/AccountSetting.dart';
+import 'package:petal_business/views/EditMenu.dart';
+import 'package:petal_business/views/GetQr.dart';
 
 class HomePage extends StatefulWidget {
   @override
