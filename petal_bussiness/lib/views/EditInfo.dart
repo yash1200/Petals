@@ -42,6 +42,7 @@ class _EditInfoState extends State<EditInfo> {
           children: [
             TextFormField(
               controller: nameController,
+              textCapitalization: TextCapitalization.words,
               decoration: InputDecoration(
                 prefixIcon: Icon(Icons.person),
                 border: OutlineInputBorder(
@@ -58,6 +59,7 @@ class _EditInfoState extends State<EditInfo> {
             ),
             TextFormField(
               controller: resNameController,
+              textCapitalization: TextCapitalization.words,
               decoration: InputDecoration(
                 prefixIcon: Icon(Icons.restaurant),
                 border: OutlineInputBorder(
@@ -74,6 +76,7 @@ class _EditInfoState extends State<EditInfo> {
             ),
             TextFormField(
               controller: emailController,
+              keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
                 prefixIcon: Icon(Icons.email),
                 border: OutlineInputBorder(

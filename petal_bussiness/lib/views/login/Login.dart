@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:petal_bussiness/Firebase/LoginFunction.dart';
+import 'package:petal_bussiness/Widgets/CustomFlatButton.dart';
 import 'package:petal_bussiness/views/login/Confirm.dart';
 
 import 'SignUp.dart';
@@ -52,8 +53,8 @@ class _LoginState extends State<Login> {
               SizedBox(
                 height: 20,
               ),
-              RaisedButton(
-                onPressed: () async {
+              CustomFlatButton(
+                onTap: () {
                   if (key.currentState.validate()) {
                     verifyPhoneNumber(phoneController.text, context);
                     Navigator.pushReplacement(context,
@@ -64,7 +65,7 @@ class _LoginState extends State<Login> {
                     }));
                   }
                 },
-                child: Text('Login'),
+                text: "Login",
               ),
             ],
           ),

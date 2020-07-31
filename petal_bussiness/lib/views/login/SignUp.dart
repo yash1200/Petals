@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:petal_bussiness/Api_calls/ApiCall.dart';
 import 'package:petal_bussiness/Model/Restaurant.dart';
+import 'package:petal_bussiness/Widgets/CustomFlatButton.dart';
 import 'package:petal_bussiness/views/HomePage.dart';
 
 class SignUp extends StatefulWidget {
@@ -95,8 +96,8 @@ class _SignUpState extends State<SignUp> {
                 SizedBox(
                   height: 30,
                 ),
-                RaisedButton(
-                  onPressed: () {
+                CustomFlatButton(
+                  onTap: () {
                     if (key.currentState.validate()) {
                       restaurant = Restaurant(
                         name: resNameController.text,
@@ -111,18 +112,14 @@ class _SignUpState extends State<SignUp> {
                           if (value) {
                             Navigator.pushReplacement(context,
                                 MaterialPageRoute(builder: (context) {
-                              return HomePage();
-                            }));
+                                  return HomePage();
+                                }));
                           }
                         },
                       );
                     }
                   },
-                  child: Text('Sign Up'),
-                  color: Colors.black45,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
+                  text: "Sign Up",
                 ),
               ],
             ),

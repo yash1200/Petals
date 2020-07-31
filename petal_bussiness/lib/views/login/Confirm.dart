@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:petal_bussiness/Firebase/LoginFunction.dart';
 import 'package:petal_bussiness/Provider/LoginProvider.dart';
+import 'package:petal_bussiness/Widgets/CustomFlatButton.dart';
 import 'package:provider/provider.dart';
 
 import 'CheckUser.dart';
@@ -59,14 +60,14 @@ class _ConfirmState extends State<Confirm> {
               SizedBox(
                 height: 20,
               ),
-              RaisedButton(
-                onPressed: () async {
+              CustomFlatButton(
+                onTap: () async {
                   if (key.currentState.validate()) {
                     signInWithPhoneNumber(
                       codeController.text,
                       provider.verifyId,
                     ).then(
-                          (value) {
+                      (value) {
                         if (value) {
                           checkUser(context, widget.phone);
                         } else {
@@ -84,7 +85,7 @@ class _ConfirmState extends State<Confirm> {
                     );
                   }
                 },
-                child: Text('Confirm'),
+                text: 'Confirm',
               ),
             ],
           ),
