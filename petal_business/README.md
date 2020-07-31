@@ -1,16 +1,19 @@
-# petal_bussiness
+# Petal Business
 
-A new Flutter project.
+Petal Business is an app for owners of restaurants to manage data of their restaurants in which they can edit their details and menu details as well as save the QR-code for their restaurants in their Downloads folder as an image and later print it for customers to use.
 
-## Getting Started
+## Home Screen
 
-This project is a starting point for a Flutter application.
+<img src="https://imgur.com/Sb0tgWK.png" height="500">
 
-A few resources to get you started if this is your first Flutter project:
+## Get QR-Code Screen
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+<img src="https://imgur.com/nYM1LmO.png" height="500">
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Edit Settings Screen
+
+<img src="https://imgur.com/8b9c2Op.png" height="500"> <img src="https://imgur.com/PbQxRW9.png" height="500">
+
+## Edit Menu Screen
+
+<img src="https://imgur.com/GvLTEVT.png" height="500">
