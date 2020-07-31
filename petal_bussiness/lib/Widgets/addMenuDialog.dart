@@ -37,6 +37,7 @@ void addMenuDialog(BuildContext context) {
         key: key,
         child: TextFormField(
           controller: typeController,
+          textCapitalization: TextCapitalization.words,
           decoration: InputDecoration(
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),

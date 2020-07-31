@@ -19,6 +19,11 @@ class RestaurantProvider with ChangeNotifier {
     notifyListeners();
   }
 
+  void addItem(Item item, int index) {
+    menu[index].items.add(item);
+    notifyListeners();
+  }
+
   void setMenu(List<Menu> value) {
     _menu = value;
     notifyListeners();

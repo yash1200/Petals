@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:petal_bussiness/Provider/RestaurantProvider.dart';
+import 'package:petal_bussiness/Widgets/addItemDialog.dart';
 import 'package:petal_bussiness/Widgets/addMenuDialog.dart';
 import 'package:provider/provider.dart';
 
@@ -29,7 +30,9 @@ class _EditMenuState extends State<EditMenu> {
                     trailing: Text(provider.menu[i].items[j].price.toString()),
                   ),
                 FlatButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    addItemDialog(context, i);
+                  },
                   child: Text('Add Item'),
                 ),
               ],
