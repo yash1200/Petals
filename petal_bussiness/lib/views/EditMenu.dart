@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:petal_bussiness/Api_calls/ApiCall.dart';
 import 'package:petal_bussiness/Provider/RestaurantProvider.dart';
 import 'package:petal_bussiness/Widgets/addItemDialog.dart';
 import 'package:petal_bussiness/Widgets/addMenuDialog.dart';
@@ -20,7 +21,10 @@ class _EditMenuState extends State<EditMenu> {
         title: Text('Edit Menu'),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              provider.restaurant.menus = provider.menu;
+              updateRestaurant(provider.restaurant);
+            },
             icon: Icon(Icons.save),
           ),
         ],

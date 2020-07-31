@@ -52,46 +52,38 @@ class Restaurant {
 class Menu {
   Menu({
     this.items,
-    this.id,
     this.type,
   });
 
   List<Item> items;
-  String id;
   String type;
 
   factory Menu.fromJson(Map<String, dynamic> json) => Menu(
         items: List<Item>.from(json["items"].map((x) => Item.fromJson(x))),
-        id: json["_id"],
         type: json["type"],
       );
 
   Map<String, dynamic> toJson() => {
         "items": List<dynamic>.from(items.map((x) => x.toJson())),
-        "_id": id,
         "type": type,
       };
 }
 
 class Item {
   Item({
-    this.id,
     this.name,
     this.price,
   });
 
-  String id;
   String name;
   int price;
 
   factory Item.fromJson(Map<String, dynamic> json) => Item(
-        id: json["_id"],
         name: json["name"],
         price: json["price"],
       );
 
   Map<String, dynamic> toJson() => {
-        "_id": id,
         "name": name,
         "price": price,
       };
