@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CustomCard extends StatelessWidget {
-  String image, text;
-  var intent;
+  final image, text;
+  final intent;
 
   CustomCard({this.text, this.image, this.intent});
 

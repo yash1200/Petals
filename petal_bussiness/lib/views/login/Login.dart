@@ -3,8 +3,6 @@ import 'package:petal_bussiness/Firebase/LoginFunction.dart';
 import 'package:petal_bussiness/Widgets/CustomFlatButton.dart';
 import 'package:petal_bussiness/views/login/Confirm.dart';
 
-import 'SignUp.dart';
-
 class Login extends StatefulWidget {
   @override
   _LoginState createState() => _LoginState();

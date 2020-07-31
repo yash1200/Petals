@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 import 'CheckUser.dart';
 
 class Confirm extends StatefulWidget {
-  String phone;
+  final phone;
 
   Confirm({this.phone});
 

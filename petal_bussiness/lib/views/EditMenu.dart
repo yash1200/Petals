@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:petal_bussiness/Api_calls/ApiCall.dart';
 import 'package:petal_bussiness/Provider/RestaurantProvider.dart';
-import 'package:petal_bussiness/Widgets/Constants.dart';
 import 'package:petal_bussiness/Widgets/CustomFlatButton.dart';
 import 'package:petal_bussiness/Widgets/addItemDialog.dart';
 import 'package:petal_bussiness/Widgets/addMenuDialog.dart';

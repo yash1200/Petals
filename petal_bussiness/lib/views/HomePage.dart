@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:petal_bussiness/Api_calls/ApiCall.dart';
 import 'package:petal_bussiness/Widgets/CustomCard.dart';
+import 'package:petal_bussiness/views/About.dart';
 import 'package:petal_bussiness/views/AccountSetting.dart';
 import 'package:petal_bussiness/views/EditMenu.dart';
 import 'package:petal_bussiness/views/GetQr.dart';
@@ -44,6 +45,9 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             ),
+            SizedBox(
+              height: 5,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -53,9 +57,9 @@ class _HomePageState extends State<HomePage> {
                   intent: EditMenu(),
                 ),
                 CustomCard(
-                  image: "system.png",
-                  text: "Account Settings",
-                  intent: AccountSetting(),
+                  image: "about.png",
+                  text: "About",
+                  intent: About(),
                 ),
               ],
             ),
