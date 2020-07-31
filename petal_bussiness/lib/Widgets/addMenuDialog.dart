@@ -1,0 +1,57 @@
+import 'package:flutter/material.dart';
+import 'package:petal_bussiness/Model/Restaurant.dart';
+import 'package:petal_bussiness/Provider/RestaurantProvider.dart';
+import 'package:provider/provider.dart';
+
+void addMenuDialog(BuildContext context) {
+  TextEditingController typeController = TextEditingController();
+  final provider = Provider.of<RestaurantProvider>(context, listen: false);
+  final GlobalKey<FormState> key = GlobalKey<FormState>();
+  showDialog(
+    context: context,
+    child: AlertDialog(
+      title: Text('Add Type'),
+      actions: [
+        FlatButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Text('Cancel'),
+        ),
+        FlatButton(
+          onPressed: () {
+            if (key.currentState.validate()) {
+              provider.addMenu(
+                Menu(
+                  type: typeController.text,
+                  items: [],
+                ),
+              );
+              Navigator.pop(context);
+            }
+          },
+          child: Text('Confirm'),
+        ),
+      ],
+      content: Form(
+        key: key,
+        child: TextFormField(
+          controller: typeController,
+          decoration: InputDecoration(
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+            hintText: 'Chapati',
+          ),
+          validator: (value) {
+            if (value.isEmpty) return "Type can\'t be empty";
+            return null;
+          },
+        ),
+      ),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+      ),
+    ),
+  );
+}

@@ -46,4 +46,5 @@ Future<void> setRestaurant(BuildContext context) async {
   FirebaseUser firebaseUser = await FirebaseAuth.instance.currentUser();
   var response = await http.get(Strings().ownerUrl + firebaseUser.uid);
   provider.setRestaurant(restaurantFromJson(response.body));
+  provider.setMenu(provider.restaurant.menus);
 }

@@ -44,6 +44,7 @@ class _SignUpState extends State<SignUp> {
               children: [
                 TextFormField(
                   controller: nameController,
+                  textCapitalization: TextCapitalization.words,
                   decoration: InputDecoration(
                     labelText: 'Name',
                     alignLabelWithHint: true,
@@ -62,6 +63,7 @@ class _SignUpState extends State<SignUp> {
                 ),
                 TextFormField(
                   controller: resNameController,
+                  textCapitalization: TextCapitalization.words,
                   decoration: InputDecoration(
                     labelText: 'Restaurant Name',
                     alignLabelWithHint: true,
@@ -80,6 +82,7 @@ class _SignUpState extends State<SignUp> {
                 ),
                 TextFormField(
                   controller: emailController,
+                  keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     labelText: 'Email',
                     alignLabelWithHint: true,

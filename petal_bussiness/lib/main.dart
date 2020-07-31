@@ -6,8 +6,6 @@ import 'package:petal_bussiness/views/HomePage.dart';
 import 'package:petal_bussiness/views/login/Login.dart';
 import 'package:provider/provider.dart';
 
-import 'Widgets/ConnectionError.dart';
-
 void main() {
   runApp(MyApp());
 }
