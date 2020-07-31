@@ -22,41 +22,45 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Petals'),
+        title: Text('Petals Business'),
+        elevation: 0,
       ),
-      body: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              CustomCard(
-                image: "qr-code.png",
-                text: "Get QR Code",
-                intent: GetQr(),
-              ),
-              CustomCard(
-                image: "system.png",
-                text: "Account Settings",
-                intent: AccountSetting(),
-              ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              CustomCard(
-                image: "food-delivery.png",
-                text: "Edit Menu",
-                intent: EditMenu(),
-              ),
-              CustomCard(
-                image: "system.png",
-                text: "Account Settings",
-                intent: AccountSetting(),
-              ),
-            ],
-          ),
-        ],
+      body: Padding(
+        padding: const EdgeInsets.only(top: 10),
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                CustomCard(
+                  image: "qr-code.png",
+                  text: "Get QR Code",
+                  intent: GetQr(),
+                ),
+                CustomCard(
+                  image: "system.png",
+                  text: "Account Settings",
+                  intent: AccountSetting(),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                CustomCard(
+                  image: "food-delivery.png",
+                  text: "Edit Menu",
+                  intent: EditMenu(),
+                ),
+                CustomCard(
+                  image: "system.png",
+                  text: "Account Settings",
+                  intent: AccountSetting(),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

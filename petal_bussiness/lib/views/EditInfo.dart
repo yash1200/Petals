@@ -34,6 +34,7 @@ class _EditInfoState extends State<EditInfo> {
       key: _scaffoldKey,
       appBar: AppBar(
         title: Text('Edit'),
+        elevation: 0,
       ),
       body: Padding(
         padding: const EdgeInsets.only(left: 15, right: 15),

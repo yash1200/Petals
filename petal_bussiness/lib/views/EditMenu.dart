@@ -22,6 +22,7 @@ class _EditMenuState extends State<EditMenu> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Edit Menu'),
+        elevation: 0,
         actions: [
           IconButton(
             onPressed: () {

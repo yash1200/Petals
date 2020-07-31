@@ -19,6 +19,7 @@ class _GetQrState extends State<GetQr> {
       key: _scaffoldKey,
       appBar: AppBar(
         title: Text('Get QR Code'),
+        elevation: 0,
         actions: [
           IconButton(
             icon: Icon(Icons.save),
