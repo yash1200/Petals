@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:petal/models/Restaurant.dart';
 import 'package:petal/ui/Menu.dart';
+import 'package:petal/ui/Template.dart';
 import 'package:petal/values/strings.dart';
+import 'package:petal/widgets/connectionError.dart';
 
 class MenuScreen extends StatefulWidget {
-  String id;
+  final String id;
 
   MenuScreen({this.id});
 
@@ -21,61 +23,40 @@ class _MenuScreenState extends State<MenuScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Menu'),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.refresh),
-            tooltip: 'Refresh',
-            onPressed: () {
+    return FutureBuilder(
+      future: getData(),
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          return MenuWid(
+            restaurant: snapshot.data,
+          );
+        } else if (snapshot.hasError) {
+          return Template(
+            body: ConnectionError(),
+            onTap: () {
               setState(() {});
             },
-          )
-        ],
-      ),
-      body: FutureBuilder(
-        future: getData(),
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            return MenuWid(
-              restaurant: snapshot.data,
-            );
-          } else if (snapshot.hasError) {
-            return Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Image.asset(
-                    'assets/error.png',
-                    height: size.width * 0.4,
-                    width: size.width * 0.4,
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Text(
-                    'OOPS! Something went wrong.',
-                    style: TextStyle(
-                      fontSize: 20,
-                    ),
-                  ),
-                ],
-              ),
-            );
-          } else if (snapshot.connectionState == ConnectionState.none) {
-            return Center(
+          );
+        } else if (snapshot.connectionState == ConnectionState.none) {
+          return Template(
+            body: Center(
               child: Text('Connect to the internet'),
-            );
-          } else {
-            return Center(
+            ),
+            onTap: () {
+              setState(() {});
+            },
+          );
+        } else {
+          return Template(
+            body: Center(
               child: CircularProgressIndicator(),
-            );
-          }
-        },
-      ),
+            ),
+            onTap: () {
+              setState(() {});
+            },
+          );
+        }
+      },
     );
   }
 }
