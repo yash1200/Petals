@@ -23,8 +23,15 @@ Petals will show you every possible detail about a restaurant like menu, name of
     cd backend
     npx nodemon index
     ```
+3. Change IP of API calls
 
-3. Run Petals
+    ```
+    cd [app]/lib/values/strings.dart
+    ```
+    And update the "ip" value with the ip of your server.
+
+
+4. Run Petals
 
     ```
     flutter run --release
