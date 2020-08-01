@@ -26,7 +26,7 @@ Petals will show you every possible detail about a restaurant like menu, name of
 3. Change IP of API calls
 
     ```
-    cd [app]/lib/values/strings.dart
+    nano [app]/lib/values/strings.dart
     ```
     And update the "ip" value with the ip of your server.
 
