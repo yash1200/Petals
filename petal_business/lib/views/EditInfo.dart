@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:petal_business/Api_calls/UpdateInfo.dart';
+import 'package:petal_business/Network/UpdateInfo.dart';
 import 'package:petal_business/Provider/RestaurantProvider.dart';
 import 'package:provider/provider.dart';
 

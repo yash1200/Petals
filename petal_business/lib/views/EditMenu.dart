@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:petal_business/Api_calls/ApiCall.dart';
+import 'package:petal_business/Network/ApiCall.dart';
 import 'package:petal_business/Provider/RestaurantProvider.dart';
 import 'package:petal_business/Widgets/ConnectionError.dart';
 import 'package:petal_business/Widgets/CustomFlatButton.dart';
