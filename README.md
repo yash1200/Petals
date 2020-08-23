@@ -44,3 +44,9 @@ This currently works on Android, IOS and Linux (only Petal App).
     ```
     flutter build apk --release
     ```
+
+## Petals
+
+Home Screen                         |  Details Screen
+:----------------------------------:|:----------------------------------:
+![](https://imgur.com/CkgbR7u.png)  |  ![](https://imgur.com/gv2eOyp.png)
