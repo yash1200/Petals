@@ -50,3 +50,10 @@ This currently works on Android, IOS and Linux (only Petal App).
 Home Screen                         |  Details Screen
 :----------------------------------:|:----------------------------------:
 ![](https://imgur.com/CkgbR7u.png)  |  ![](https://imgur.com/gv2eOyp.png)
+
+
+## Petals Business
+
+Home Screen                         |  Edit Details Screen
+:----------------------------------:|:----------------------------------:
+![](https://imgur.com/Sb0tgWK.png)  |  ![](https://imgur.com/GvLTEVT.png)
