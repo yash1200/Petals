@@ -9,10 +9,10 @@ void verifyPhoneNumber(String phone, BuildContext context) async {
   var _verificationId;
 
   final PhoneVerificationCompleted verificationCompleted =
-      (AuthCredential phoneAuthCredential) {};
+      (PhoneAuthCredential phoneAuthCredential) {};
 
   final PhoneVerificationFailed verificationFailed =
-      (AuthException authException) {};
+      (FirebaseAuthException firebaseAuthException) {};
 
   final PhoneCodeSent codeSent =
       (String verificationId, [int forceResendingToken]) async {
@@ -37,19 +37,19 @@ void verifyPhoneNumber(String phone, BuildContext context) async {
 }
 
 Future<bool> signInWithPhoneNumber(String otp, String verificationId) async {
-  final AuthCredential credential = PhoneAuthProvider.getCredential(
+  final AuthCredential credential = PhoneAuthProvider.credential(
     verificationId: verificationId,
     smsCode: otp,
   );
-  AuthResult authResult =
+  UserCredential userCredential =
       await FirebaseAuth.instance.signInWithCredential(credential);
-  FirebaseUser user = authResult.user;
+  User user = userCredential.user;
   if (user != null) return true;
   return false;
 }
 
-Future<FirebaseUser> getUser() async {
-  FirebaseUser firebaseUser = await FirebaseAuth.instance.currentUser();
+User getUser() {
+  User firebaseUser = FirebaseAuth.instance.currentUser;
   return firebaseUser;
 }
 

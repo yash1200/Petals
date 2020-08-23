@@ -1,10 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:petal_business/Provider/LoginProvider.dart';
 import 'package:petal_business/Provider/RestaurantProvider.dart';
 import 'package:petal_business/views/HomePage.dart';
 import 'package:petal_business/views/login/Login.dart';
 import 'package:provider/provider.dart';
+
+import 'views/HomePage.dart';
 
 void main() {
   runApp(MyApp());
@@ -30,12 +33,19 @@ class MyApp extends StatelessWidget {
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         home: FutureBuilder(
-          future: FirebaseAuth.instance.currentUser(),
+          future: Firebase.initializeApp(),
           builder: (context, snapshot) {
-            if (snapshot.data == null)
-              return Login();
-            else
-              return HomePage();
+            if (snapshot.connectionState == ConnectionState.done) {
+              return FirebaseAuth.instance.currentUser == null
+                  ? Login()
+                  : HomePage();
+            } else {
+              return Center(
+                child: Text(
+                  "Connect to the internet!",
+                ),
+              );
+            }
           },
         ),
       ),

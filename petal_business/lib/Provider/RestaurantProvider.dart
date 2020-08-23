@@ -16,6 +16,9 @@ class RestaurantProvider with ChangeNotifier {
 
   void addItem(Item item, int index) {
     menu[index].items.add(item);
+    menu[index].items.sort((Item a, Item b) {
+      return a.name.compareTo(b.name);
+    });
     notifyListeners();
   }
 
@@ -26,6 +29,9 @@ class RestaurantProvider with ChangeNotifier {
 
   void addMenu(Menu m) {
     menu.add(m);
+    menu.sort((Menu a, Menu b) {
+      return a.type.compareTo(b.type);
+    });
     notifyListeners();
   }
 

@@ -15,16 +15,15 @@ class _SignUpState extends State<SignUp> {
   TextEditingController emailController = TextEditingController();
   TextEditingController resNameController = TextEditingController();
   final GlobalKey<FormState> key = GlobalKey<FormState>();
-  FirebaseUser firebaseUser;
+  User firebaseUser;
   Restaurant restaurant;
 
-  void getUserL() async {
-    firebaseUser = await FirebaseAuth.instance.currentUser();
+  void getUserL() {
+    firebaseUser = FirebaseAuth.instance.currentUser;
   }
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     getUserL();
   }
