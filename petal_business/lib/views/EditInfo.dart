@@ -23,7 +23,6 @@ class _EditInfoState extends State<EditInfo> {
 
   @override
   void initState() {
-    // TODO: implement initState
     setValues(context);
     super.initState();
   }

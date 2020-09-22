@@ -60,7 +60,6 @@ class _ScanQrState extends State<ScanQr> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     controller?.dispose();
   }

@@ -58,7 +58,6 @@ class _AccountSettingState extends State<AccountSetting> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     _scaffoldKey?.currentState?.dispose();
     super.dispose();
   }

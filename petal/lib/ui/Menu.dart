@@ -40,7 +40,6 @@ class _MenuWidState extends State<MenuWid> {
 
   @override
   void didChangeDependencies() {
-    // TODO: implement didChangeDependencies
     super.didChangeDependencies();
     sendData(context);
   }
