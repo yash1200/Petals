@@ -8,7 +8,7 @@ Petals is a service with which we can avoid touching unnecessary things at resta
 
 Petals will show you every possible detail about a restaurant like menu, name of owner, phone number, email (if available) and other details just by scanning a QR-code at the restaurant.
 
-This currently works on Android, IOS and Linux (only Petal App).
+This currently works on Android, IOS, web (only Petal App) and Linux (only Petal App).
 
 ## To run the project
 
