@@ -23,6 +23,7 @@ This currently works on Android, IOS, web (only Petal App) and Linux (only Petal
 
     ```
     cd backend
+    npm i
     npx nodemon index
     ```
 3. Change IP of API calls
