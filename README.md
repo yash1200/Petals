@@ -15,7 +15,7 @@ This currently works on Android, IOS and Linux (only Petal App).
 1. Start Mongodb
 
     ```
-    systemctl start mongodb
+    sudo systemctl start mongodb
     mongo
     ```
 
