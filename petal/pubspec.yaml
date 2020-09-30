@@ -26,7 +26,7 @@ dependencies:
   qr_code_scanner: ^0.0.13
   http: ^0.12.2
   font_awesome_flutter: ^8.8.1
-  path_provider: ^1.6.17
+  path_provider: ^1.6.18
   provider: ^4.3.2+2
 
 
