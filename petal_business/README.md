@@ -2,6 +2,11 @@
 
 Petal Business is an app for owners of restaurants to manage data of their restaurants in which they can edit their details and menu details as well as save the QR-code for their restaurants in their Downloads folder as an image and later print it for customers to use.
 
+## Supported Platforms
+
+* Android
+* iOS
+
 ## Home Screen
 
 <img src="https://imgur.com/Sb0tgWK.png" height="500">
