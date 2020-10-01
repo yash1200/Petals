@@ -7,18 +7,12 @@ Petal Business is an app for owners of restaurants to manage data of their resta
 * Android
 * iOS
 
-## Home Screen
+## Screenshots
 
-<img src="https://imgur.com/Sb0tgWK.png" height="500">
-
-## Get QR-Code Screen
-
-<img src="https://imgur.com/nYM1LmO.png" height="500">
-
-## Edit Settings Screen
-
-<img src="https://imgur.com/8b9c2Op.png" height="500"> <img src="https://imgur.com/PbQxRW9.png" height="500">
-
-## Edit Menu Screen
-
-<img src="https://imgur.com/GvLTEVT.png" height="500">
+<p float="left">
+  <img src="https://imgur.com/Sb0tgWK.png" height="500">
+  <img src="https://imgur.com/nYM1LmO.png" height="500">
+  <img src="https://imgur.com/8b9c2Op.png" height="500">
+  <img src="https://imgur.com/PbQxRW9.png" height="500">
+  <img src="https://imgur.com/GvLTEVT.png" height="500">
+</p>
