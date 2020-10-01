@@ -11,7 +11,9 @@ Petal is an app with which we can get details like menu, name of owner, phone, e
 
 ## Screenshots
 
-<img src="https://imgur.com/CkgbR7u.png" height="500">
-<img src="https://imgur.com/oF94Jsi.png" height="500">
-<img src="https://imgur.com/UFSAV7Q.png" height="500">
-<img src="https://imgur.com/gv2eOyp.png" height="500">
+<p float="left">
+  <img src="https://imgur.com/CkgbR7u.png" height="500">
+  <img src="https://imgur.com/oF94Jsi.png" height="500">
+  <img src="https://imgur.com/UFSAV7Q.png" height="500">
+  <img src="https://imgur.com/gv2eOyp.png" height="500">
+</p>
