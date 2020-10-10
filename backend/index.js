@@ -1,18 +1,18 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const bodyparser = require("body-parser");
+import express from "express";
+import { connect, Promise } from "mongoose";
+import { json } from "body-parser";
 
 const app = express();
 
-mongoose.connect("mongodb://localhost/petal", {
-	useNewUrlParser: true,
-	useUnifiedTopology: true,
-	useFindAndModify: false,
-	useCreateIndex: true,
+connect("mongodb://localhost/petal", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
+  useCreateIndex: true,
 });
-mongoose.Promise = global.Promise;
+Promise = global.Promise;
 
-app.use(bodyparser.json());
+app.use(json());
 app.use("/", require("./app/api"));
 app.use("/", require("./app/search"));
 app.use("/", require("./app/signup"));
