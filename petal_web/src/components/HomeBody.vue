@@ -29,14 +29,14 @@ p {
 }
 
 .scan-button {
-  padding: 20px 0 20px;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
   width: 70%;
-  border-radius: 20px;
+  display: flex;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 20px;
+  padding: 20px 0 20px;
+  align-content: center;
+  flex-direction: column;
   background-color: #424242;
 }
 
@@ -50,7 +50,7 @@ p {
 .scan-button-name {
   padding-top: 20px;
   color: white;
-  font-weight: 500;
-  font-size: 25px;
+  font-weight: 400;
+  font-size: 1.8em;
 }
 </style>

@@ -1,7 +1,9 @@
 <template>
   <div class="Nav">
-    <div class="appName">Petal</div>
-    <div class="material-icons">search</div>
+    <div class="navBar">
+      <div class="appName">Petal</div>
+      <div class="material-icons">search</div>
+    </div>
   </div>
 </template>
 
@@ -13,21 +15,26 @@ export default {
 
 <style scoped>
 .Nav {
-  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 7vh;
+  background-color: #212121;
+  padding: 0 20px 0;
+}
+
+.navBar {
   display: flex;
   flex-direction: row;
-  background-color: #212121;
   justify-content: space-between;
-  align-content: center;
 }
 
 .appName {
   color: white;
-  padding-left: 20px;
+  font-size: 1.2em;
 }
 
 .material-icons {
   color: white;
-  padding-right: 20px;
 }
 </style>
