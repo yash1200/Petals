@@ -1,13 +1,15 @@
 <template>
   <div class="homeBody">
-    <div class="scan-button">
-      <img
-        src="https://www.flaticon.com/svg/static/icons/svg/3126/3126504.svg"
-        alt="Icons"
-        class="scan-icon"
-      />
-      <div class="scan-button-name">Scan</div>
-    </div>
+    <router-link to="/scan">
+      <div class="scan-button">
+        <img
+          src="https://www.flaticon.com/svg/static/icons/svg/3126/3126504.svg"
+          alt="Icons"
+          class="scan-icon"
+        />
+        <div class="scan-button-name">Scan</div>
+      </div>
+    </router-link>
   </div>
 </template>
 

@@ -1,7 +1,9 @@
 <template>
   <div class="Nav">
     <div class="navBar">
-      <div class="appName">Petal</div>
+      <router-link class="appNameLink" to="/">
+        <div class="appName">Petal</div>
+      </router-link>
       <div class="material-icons">search</div>
     </div>
   </div>
@@ -29,6 +31,11 @@ export default {
   justify-content: space-between;
 }
 
+.appNameLink {
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .appName {
   color: white;
   font-size: 1.2em;
@@ -36,5 +43,6 @@ export default {
 
 .material-icons {
   color: white;
+  cursor: pointer;
 }
 </style>

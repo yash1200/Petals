@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import HomeNavBar from "@/components/HomeNavBar.vue";
-import HomeBody from "@/components/HomeBody.vue";
+import HomeNavBar from "@/components/HomeComponents/HomeNavBar.vue";
+import HomeBody from "@/components/HomeComponents/HomeBody.vue";
 
 export default {
   name: "Home",
