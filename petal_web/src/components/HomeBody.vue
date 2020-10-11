@@ -24,17 +24,17 @@ export default {
 
 p {
   color: white;
-  font-weight: 500;
   font-size: 25px;
+  font-weight: 500;
 }
 
 .scan-button {
-  width: 70%;
+  width: 65%;
   display: flex;
   margin-left: auto;
   margin-right: auto;
   border-radius: 20px;
-  padding: 20px 0 20px;
+  padding: 30px 0 30px;
   align-content: center;
   flex-direction: column;
   background-color: #424242;
@@ -48,8 +48,8 @@ p {
 }
 
 .scan-button-name {
-  padding-top: 20px;
   color: white;
+  padding-top: 20px;
   font-weight: 400;
   font-size: 1.8em;
 }

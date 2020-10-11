@@ -15,12 +15,12 @@ export default {
 
 <style scoped>
 .Nav {
+  height: 7vh;
   display: flex;
+  padding: 0 20px 0;
   flex-direction: column;
   justify-content: center;
-  height: 7vh;
   background-color: #212121;
-  padding: 0 20px 0;
 }
 
 .navBar {
