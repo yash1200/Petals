@@ -6,7 +6,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import HomeNavBar from "@/components/HomeNavBar.vue";
 import HomeBody from "@/components/HomeBody.vue";
 
@@ -20,12 +19,7 @@ export default {
 </script>
 
 <style scoped>
-body {
-  height: 100%;
-  background-color: #303030;
-}
-
 .home {
-  background-color: #303030;
+  height: 100%;
 }
 </style>

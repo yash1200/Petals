@@ -3,6 +3,7 @@
     rel="stylesheet"
     href="https://fonts.googleapis.com/icon?family=Material+Icons"
   />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <div id="app"></div>
   <router-view />
 </template>
@@ -10,6 +11,8 @@
 <style>
 body {
   margin: 0;
+  height: 100%;
+  background-color: #303030;
 }
 
 #app {

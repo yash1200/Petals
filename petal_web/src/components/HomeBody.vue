@@ -6,7 +6,7 @@
         alt="Icons"
         class="scan-icon"
       />
-      <p>Scan</p>
+      <div class="scan-button-name">Scan</div>
     </div>
   </div>
 </template>
@@ -18,6 +18,10 @@ export default {
 </script>
 
 <style scoped>
+.homeBody {
+  padding-top: 50%;
+}
+
 p {
   color: white;
   font-weight: 500;
@@ -25,18 +29,28 @@ p {
 }
 
 .scan-button {
+  padding: 20px 0 20px;
   display: flex;
   flex-direction: column;
+  align-content: center;
   width: 70%;
+  border-radius: 20px;
   margin-left: auto;
   margin-right: auto;
   background-color: #424242;
 }
 
 .scan-icon {
-  background-color: #424242;
   width: 60%;
   margin-left: auto;
   margin-right: auto;
+  background-color: #424242;
+}
+
+.scan-button-name {
+  padding-top: 20px;
+  color: white;
+  font-weight: 500;
+  font-size: 25px;
 }
 </style>

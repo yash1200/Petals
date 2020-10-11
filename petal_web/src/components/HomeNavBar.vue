@@ -1,7 +1,7 @@
 <template>
   <div class="Nav">
-    <h3 class="appName">Petal</h3>
-    <i class="material-icons">search</i>
+    <div class="appName">Petal</div>
+    <div class="material-icons">search</div>
   </div>
 </template>
 
@@ -13,6 +13,7 @@ export default {
 
 <style scoped>
 .Nav {
+  height: 60px;
   display: flex;
   flex-direction: row;
   background-color: #212121;
@@ -28,6 +29,5 @@ export default {
 .material-icons {
   color: white;
   padding-right: 20px;
-  vertical-align: -14%;
 }
 </style>
