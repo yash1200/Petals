@@ -1,7 +1,7 @@
 <template>
   <div class="HomeBody">
     <div class="HomeBodyContent">
-      <router-link to="/scan">
+      <router-link class="ScanRoute" to="/scan">
         <div class="scan-button">
           <img
             src="https://www.flaticon.com/svg/static/icons/svg/3126/3126504.svg"
@@ -35,6 +35,10 @@ p {
   font-weight: 500;
 }
 
+.ScanRoute {
+  text-decoration: none;
+}
+
 .scan-button {
   width: 65%;
   display: flex;
@@ -59,6 +63,5 @@ p {
   padding-top: 20px;
   font-weight: 400;
   font-size: 1.8em;
-  text-decoration: none;
 }
 </style>
