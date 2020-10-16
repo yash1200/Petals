@@ -1,16 +1,18 @@
 <template>
   <div class="HomeBody">
     <div class="HomeBodyContent">
-      <router-link class="ScanRoute" to="/scan">
-        <div class="scan-button">
-          <img
-            src="https://www.flaticon.com/svg/static/icons/svg/3126/3126504.svg"
-            alt="Icons"
-            class="scan-icon"
-          />
-          <div class="scan-button-name">Scan</div>
-        </div>
-      </router-link>
+      <div class="ScanContent">
+        <router-link class="ScanRoute" to="/scan">
+          <div class="scan-button">
+            <img
+              src="https://www.flaticon.com/svg/static/icons/svg/3126/3126504.svg"
+              alt="Icons"
+              class="scan-icon"
+            />
+            <div class="scan-button-name">Scan</div>
+          </div>
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -35,12 +37,16 @@ p {
   font-weight: 500;
 }
 
+.ScanContent {
+  margin-left: 16%;
+  margin-right: 16%;
+}
+
 .ScanRoute {
   text-decoration: none;
 }
 
 .scan-button {
-  width: 65%;
   display: flex;
   margin-left: auto;
   margin-right: auto;
