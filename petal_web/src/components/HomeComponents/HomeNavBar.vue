@@ -4,7 +4,9 @@
       <router-link class="appNameLink" to="/">
         <div class="appName">Petal</div>
       </router-link>
-      <div class="material-icons">search</div>
+      <router-link class="searchLink" to="/search">
+        <div class="material-icons">search</div>
+      </router-link>
     </div>
   </div>
 </template>
