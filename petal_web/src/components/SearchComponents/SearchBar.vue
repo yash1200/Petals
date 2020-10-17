@@ -1,41 +1,60 @@
 <template>
   <div class="SearchBar">
-    <div class="material-icons" v-on:click="$router.go(-1)">arrow_back</div>
-    <input
-      class="SearchField"
-      placeholder="Search"
-      v-model="searchContent"
-      v-on:input="getResults"
-    />
-    <div class="material-icons" v-on:click="clearSearchField">cancel</div>
+    <div class="SearchNavBar">
+      <div class="material-icons" v-on:click="$router.go(-1)">arrow_back</div>
+      <input
+        class="SearchField"
+        placeholder="Search"
+        v-model="searchContent"
+        v-on:input="getResults"
+      />
+      <div class="material-icons" v-on:click="clearSearchField">cancel</div>
+    </div>
+    <div v-if="searchResults != null">
+      <SearchResultListTile
+        v-for="result in searchResults"
+        :key="result._id"
+        :id="result._id"
+        :title="result.name"
+      />
+    </div>
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import * as SearchRes from "@/model/SearchRes.js";
+import SearchResultListTile from "@/components/SearchComponents/SearchResultListTile.vue";
 
 export default {
   name: "SearchBar",
   data() {
     return {
       searchContent: "",
+      searchResults: null,
     };
+  },
+  components: {
+    SearchResultListTile,
   },
   methods: {
     clearSearchField() {
-      axios
-        .get("http://localhost:3000/search/?q=Jd", {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-          },
-        })
-        .then(function (response) {
-          console.log(response);
-        });
       this.searchContent = "";
+      this.searchResults = null;
     },
     getResults() {
-      console.log(this.searchContent);
+      if (this.searchContent != "") {
+        axios
+          .get("http://localhost:3000/search/", {
+            params: { q: this.searchContent },
+          })
+          .then((response) => {
+            console.log(response.data);
+            this.searchResults = SearchRes.toSearchRes(response.data);
+          });
+      } else {
+        this.searchResults = null;
+      }
     },
   },
 };
@@ -43,6 +62,11 @@ export default {
 
 <style scoped>
 .SearchBar {
+  display: flex;
+  flex-direction: column;
+}
+
+.SearchNavBar {
   height: 60px;
   display: flex;
   flex-direction: row;
