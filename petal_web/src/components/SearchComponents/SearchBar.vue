@@ -12,6 +12,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "SearchBar",
   data() {
@@ -21,6 +23,15 @@ export default {
   },
   methods: {
     clearSearchField() {
+      axios
+        .get("http://localhost:3000/search/?q=Jd", {
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+          },
+        })
+        .then(function (response) {
+          console.log(response);
+        });
       this.searchContent = "";
     },
     getResults() {

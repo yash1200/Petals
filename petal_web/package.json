@@ -8,8 +8,10 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "axios": "^0.20.0",
     "core-js": "^3.6.5",
     "vue": "^3.0.0",
+    "vue-axios": "^3.0.1",
     "vue-qrcode-reader": "^2.3.13",
     "vue-router": "^4.0.0-0"
   },
