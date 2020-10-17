@@ -1,9 +1,11 @@
 <template>
-  <div class="ListTile">
-    <div class="Title">
-      {{ title }}
+  <router-link to="{name: 'Restaurant', params:{id: {{id}}}}">
+    <div class="ListTile">
+      <div class="Title">
+        {{ title }}
+      </div>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <script>
