@@ -1,7 +1,7 @@
 <template>
   <div class="MenuNavBar">
     <div class="material-icons" v-on:click="$router.go(-1)">arrow_back</div>
-    <h2>Menu</h2>
+    <div class="title">Menu</div>
   </div>
 </template>
 
@@ -15,6 +15,7 @@ export default {
 .MenuNavBar {
   background-color: #212121;
   display: flex;
+  height: 7vh;
   flex-direction: row;
   justify-content: flex-start;
   color: white;
@@ -22,13 +23,17 @@ export default {
 
 .material-icons {
   display: flex;
-  padding-left: 10px;
+  padding-left: 15px;
   flex-direction: column;
   justify-content: center;
 }
 
-h2 {
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 20px;
   font-weight: 400;
-  padding-left: 10px;
+  padding: 5px 15px;
 }
 </style>

@@ -45,7 +45,7 @@ export default {
     getResults() {
       if (this.searchContent != "") {
         axios
-          .get("http://localhost:3000/search/", {
+          .get("http://192.168.0.104:3000/search/", {
             params: { q: this.searchContent },
           })
           .then((response) => {

@@ -24,6 +24,7 @@ const routes = [
     path: "/restaurant/:id",
     name: "Restaurant",
     component: Restaurant,
+    params: true,
   },
 ];
 

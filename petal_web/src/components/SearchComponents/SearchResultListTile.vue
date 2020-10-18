@@ -1,11 +1,9 @@
 <template>
-  <router-link to="{name: 'Restaurant', params:{id: {{id}}}}">
-    <div class="ListTile">
-      <div class="Title">
-        {{ title }}
-      </div>
+  <div class="ListTile" v-on:click="Nav">
+    <div class="Title">
+      {{ title }}
     </div>
-  </router-link>
+  </div>
 </template>
 
 <script>
@@ -19,6 +17,11 @@ export default {
     title: {
       type: String,
       required: true,
+    },
+  },
+  methods: {
+    Nav() {
+      this.$router.push({ name: "Restaurant", params: { id: this.id } });
     },
   },
 };
