@@ -1,13 +1,13 @@
 <template>
   <div class="Restaurant">
-    <MenuNavBar />
+    <RestaurantNavBar />
   </div>
 </template>
 
 <script>
 import axios from "axios";
 import * as ResData from "@/model/Restaurant.js";
-import MenuNavBar from "@/components/MenuComponents/MenuNavBar.vue";
+import RestaurantNavBar from "@/components/MenuComponents/RestaurantNavBar.vue";
 
 export default {
   name: "Restaurant",
@@ -17,7 +17,7 @@ export default {
     };
   },
   components: {
-    MenuNavBar,
+    RestaurantNavBar,
   },
   methods: {
     getRestaurant() {

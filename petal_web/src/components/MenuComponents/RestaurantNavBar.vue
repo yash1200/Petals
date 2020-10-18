@@ -1,5 +1,5 @@
 <template>
-  <div class="MenuNavBar">
+  <div class="RestaurantNavBar">
     <div class="material-icons" v-on:click="$router.go(-1)">arrow_back</div>
     <div class="title">Menu</div>
   </div>
@@ -7,12 +7,12 @@
 
 <script>
 export default {
-  name: "MenuNavBar",
+  name: "RestaurantNavBar",
 };
 </script>
 
 <style scoped>
-.MenuNavBar {
+.RestaurantNavBar {
   background-color: #212121;
   display: flex;
   height: 7vh;
