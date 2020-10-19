@@ -13,7 +13,8 @@
     "vue": "^3.0.0",
     "vue-axios": "^3.0.1",
     "vue-qrcode-reader": "^2.3.13",
-    "vue-router": "^4.0.0-0"
+    "vue-router": "^4.0.0-0",
+    "vuetify": "^2.3.14"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
