@@ -32,8 +32,6 @@ export default {
         "collapsible" + this.index.toString()
       );
       for (var col of collapsible) {
-        console.log(col);
-        // col.classList.toggle("active" + this.index.toString());
         var content = document.getElementsByClassName(
           "content" + this.index.toString()
         );
@@ -70,15 +68,6 @@ export default {
   color: white;
   font-weight: bold;
   float: right;
-}
-
-[class^="active"] {
-  color: #64ffda;
-}
-
-[class^="active"]:after {
-  content: "\02C7";
-  color: #64ffda;
 }
 
 [class^="content"] {
