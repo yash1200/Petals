@@ -1,13 +1,11 @@
 <template>
-  <div class="Nav">
-    <div class="navBar">
-      <router-link class="appNameLink" to="/">
-        <div class="appName">Petal</div>
-      </router-link>
-      <router-link class="searchLink" to="/search">
-        <div class="material-icons">search</div>
-      </router-link>
-    </div>
+  <div class="navBar">
+    <router-link class="appNameLink" to="/">
+      <div class="appName">Petal</div>
+    </router-link>
+    <router-link class="searchLink" to="/search">
+      <div class="material-icons">search</div>
+    </router-link>
   </div>
 </template>
 
@@ -18,33 +16,37 @@ export default {
 </script>
 
 <style scoped>
-.Nav {
-  height: 7vh;
-  display: flex;
-  padding: 0 20px 0;
-  flex-direction: column;
-  justify-content: center;
-  background-color: #212121;
-}
-
 .navBar {
+  height: 7vh;
+  padding: 0 20px 0;
+  background-color: #212121;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.appNameLink {
+.appNameLink,
+.searchLink {
   text-decoration: none;
   cursor: pointer;
 }
 
 .appName {
   color: white;
-  font-size: 1.2em;
+  display: flex;
+  cursor: pointer;
+  font-size: 20px;
+  height: 7vh;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .material-icons {
+  height: 7vh;
   color: white;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 </style>
