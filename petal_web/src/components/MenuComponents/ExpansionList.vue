@@ -5,7 +5,7 @@
         <div class="title">
           {{ menu.type }}
         </div>
-        <i class="material-icons">keyboard_arrow_down</i>
+        <i class="material-icons"> {{ icon }} </i>
       </div>
     </button>
     <div v-bind:class="'content' + index">
@@ -25,6 +25,11 @@ import RestaurantListTile from "@/components/MenuComponents/RestaurantListTile.v
 
 export default {
   name: "ExpansionList",
+  data() {
+    return {
+      icon: "keyboard_arrow_down",
+    };
+  },
   components: {
     RestaurantListTile,
   },
@@ -44,9 +49,11 @@ export default {
         for (var c of content) {
           if (c.style.maxHeight) {
             col.style.color = "white";
+            this.icon = "keyboard_arrow_down";
             c.style.maxHeight = null;
           } else {
             col.style.color = "#64ffda";
+            this.icon = "keyboard_arrow_up";
             c.style.maxHeight = c.scrollHeight + "px";
           }
         }
