@@ -2,6 +2,7 @@
   <div class="Restaurant" v-if="restaurant != null">
     <RestaurantNavBar />
     <RestaurantListTile
+      class="OwnerListTile"
       v-if="restaurant != null"
       :title="'Owner'"
       :value="restaurant.owner"
@@ -11,11 +12,12 @@
       :title="'Phone'"
       :value="restaurant.phone"
     />
-    <ul>
-      <li v-for="(menu, index) in restaurant.menus" :key="index">
-        <ExpansionList :menu="menu" :index="index" />
-      </li>
-    </ul>
+    <ExpansionList
+      v-for="(menu, index) in restaurant.menus"
+      :key="index"
+      :menu="menu"
+      :index="index"
+    />
   </div>
 </template>
 
@@ -62,8 +64,7 @@ export default {
   flex-direction: column;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0px 0px 0px;
+.OwnerListTile {
+  margin-top: 7vh;
 }
 </style>

@@ -1,7 +1,12 @@
 <template>
   <div class="ExpansionList">
     <button v-bind:class="'collapsible' + index" v-on:click="expand">
-      {{ menu.type }}
+      <div class="button">
+        <div class="title">
+          {{ menu.type }}
+        </div>
+        <i class="material-icons">keyboard_arrow_down</i>
+      </div>
     </button>
     <div v-bind:class="'content' + index">
       <RestaurantListTile
@@ -31,10 +36,10 @@ export default {
       var collapsible = document.getElementsByClassName(
         "collapsible" + this.index.toString()
       );
+      var content = document.getElementsByClassName(
+        "content" + this.index.toString()
+      );
       for (var col of collapsible) {
-        var content = document.getElementsByClassName(
-          "content" + this.index.toString()
-        );
         for (var c of content) {
           if (c.style.maxHeight) {
             col.style.color = "white";
@@ -55,19 +60,29 @@ export default {
   background-color: #303030;
   color: white;
   cursor: pointer;
-  padding: 15px;
   width: 100%;
   border: none;
-  text-align: left;
   outline: none;
-  font-size: 15px;
+  padding: 20px 15px 20px;
 }
 
-[class^="collapsible"]:after {
-  content: "\032D";
-  color: white;
-  font-weight: bold;
-  float: right;
+.button {
+  display: flex;
+  font-size: 15px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.title{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.material-icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 [class^="content"] {

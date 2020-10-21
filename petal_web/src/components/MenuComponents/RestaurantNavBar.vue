@@ -14,6 +14,10 @@ export default {
 <style scoped>
 .RestaurantNavBar {
   background-color: #212121;
+  top: 0;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
   display: flex;
   height: 7vh;
   flex-direction: row;
