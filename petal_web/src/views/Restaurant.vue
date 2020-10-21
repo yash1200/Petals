@@ -45,14 +45,11 @@ export default {
       axios
         .get("http://192.168.0.104:3000/petal/" + this.$route.params.id)
         .then((response) => {
-          console.log(response.data);
           this.restaurant = ResData.toRestaurant(response.data);
-          console.log(this.restaurant.menus[0].type);
         });
     },
   },
   mounted() {
-    console.log(this.$route.params.id);
     this.getRestaurant();
   },
 };

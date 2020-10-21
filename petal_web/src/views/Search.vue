@@ -49,7 +49,6 @@ export default {
             params: { q: this.searchContent },
           })
           .then((response) => {
-            console.log(response.data);
             this.searchResults = SearchRes.toSearchRes(response.data);
           });
       } else {
