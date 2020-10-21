@@ -4,6 +4,9 @@
       {{ title }}
     </div>
     <div class="value">
+      <div v-if="money == true">
+        <i class="material-icons">attach_money</i>
+      </div>
       {{ value }}
     </div>
   </div>
@@ -21,6 +24,7 @@ export default {
       type: String,
       required: true,
     },
+    money: Boolean,
   },
 };
 </script>
@@ -37,7 +41,14 @@ export default {
   color: white;
 }
 
+.material-icons {
+  font-size: 16px;
+  vertical-align: middle;
+}
+
 .value {
   color: white;
+  display: flex;
+  flex-direction: row;
 }
 </style>

@@ -14,6 +14,7 @@
         :key="item.name"
         :title="item.name"
         :value="item.price.toString()"
+        :money="true"
       />
     </div>
   </div>
@@ -73,7 +74,7 @@ export default {
   justify-content: space-between;
 }
 
-.title{
+.title {
   display: flex;
   flex-direction: column;
   justify-content: center;
