@@ -5,7 +5,7 @@
     </div>
     <div class="value">
       <div v-if="money == true">
-        <i class="material-icons">attach_money</i>
+        <i class="fa fa-rupee fa-16px"></i>
       </div>
       {{ value }}
     </div>
@@ -41,9 +41,8 @@ export default {
   color: white;
 }
 
-.material-icons {
-  font-size: 16px;
-  vertical-align: middle;
+.fa {
+  padding-right: 5px;
 }
 
 .value {
