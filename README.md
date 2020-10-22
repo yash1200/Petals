@@ -17,21 +17,21 @@ Petals will show you every possible detail about a restaurant like menu, name of
 
 ## To run the project
 
-1. Start Mongodb
+* Start Mongodb
 
     ```
     sudo systemctl start mongodb
     mongo
     ```
 
-2. Start server
+* Start server
 
     ```
     cd backend
     npm i
     npx nodemon index
     ```
-3. Change IP of API calls
+* Change IP of API calls
 
     ```
     nano [app]/lib/values/strings.dart
@@ -39,7 +39,7 @@ Petals will show you every possible detail about a restaurant like menu, name of
     And update the "ip" value with the ip of your server.
 
 
-4. Run Petals (App)
+* Run Petals (App)
 
     ```
     flutter run --release
@@ -57,7 +57,7 @@ Petals will show you every possible detail about a restaurant like menu, name of
    flutter build web --release
    ```
     
-5. Run Petals Web
+* Run Petals Web
 
     ```
     npm install
