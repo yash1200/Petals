@@ -11,6 +11,30 @@ It's web version can be build using Flutter as well as VueJs. It's VueJs version
 * Web
 * Linux
 
+## To Run the project
+
+* Make Sure the backend is up and running.
+* Run the app
+
+  ```
+  flutter run --release
+  ```
+* Or run for web
+
+  ```
+  flutter run -d chrome --release
+  ```
+* Build APK
+
+  ```
+  flutter build apk --release
+  ```
+* Build for web
+
+  ```
+  flutter build web --release
+  ```
+
 ## Screenshots
 
 <p float="left">
