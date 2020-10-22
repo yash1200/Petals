@@ -6,6 +6,31 @@ Petal Business is an app for owners of restaurants to manage data of their resta
 
 * Android
 * iOS
+* Web
+
+## To Run the project
+
+* Make Sure the backend is up and running.
+* Run the app
+
+  ```
+  flutter run --release
+  ```
+* Or run for web
+
+  ```
+  flutter run -d chrome --release
+  ```
+* Build APK
+
+  ```
+  flutter build apk --release
+  ```
+* Build for web
+
+  ```
+  flutter build web --release
+  ```
 
 ## Screenshots
 
