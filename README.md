@@ -2,7 +2,7 @@
 
 I don't know why the name "Petals"
 
-Petals is a project made with Flutter, with Node Js as Backend and with MongoDB as Database.
+Petals is a project made with Flutter, VueJs, Node Js and MongoDB.
 
 Petals is a service with which we can avoid touching unnecessary things at restaurants and avoid exposure to germs and viruses in this post COVID world by following certain measures.
 
