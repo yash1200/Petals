@@ -4,6 +4,24 @@ This is the web version of the [Petal](https://github.com/yash1200/Petals/tree/m
 
 Petal Web is a service with which we can get details like menu, name of owner, phone, email and other details of a restaurant just by scanning a QR-code at the restaurant or by searching it by its name.
 
+## To Run the Project
+
+* Setup
+
+  ```
+  npm i
+  ```
+* Run for development
+
+  ```
+  npm run serve
+  ```
+* Build for production
+
+  ```
+  npm run build
+  ```
+
 ## Screenshots
 
 <p float="left">
@@ -11,26 +29,6 @@ Petal Web is a service with which we can get details like menu, name of owner, p
   <img src="https://imgur.com/z5GT0zb.png" height="500">
   <img src="https://imgur.com/V8gq46s.png" height="500">
 </p>
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
 
 ## Created & Maintained By
 
