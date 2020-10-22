@@ -39,7 +39,7 @@ Petals will show you every possible detail about a restaurant like menu, name of
     And update the "ip" value with the ip of your server.
 
 
-4. Run Petals
+4. Run Petals (App)
 
     ```
     flutter run --release
@@ -49,6 +49,13 @@ Petals will show you every possible detail about a restaurant like menu, name of
 
     ```
     flutter build apk --release
+    ```
+    
+5. Run Petals Web
+
+    ```
+    npm install
+    npm run build
     ```
 
 ## Petals
