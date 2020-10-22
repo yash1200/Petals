@@ -2,6 +2,8 @@
 
 Petal is an app with which we can get details like menu, name of owner, phone, email and other details of a restaurant just by scanning a QR-code at the restaurant or by searching it by its name.
 
+It's web version can be build using Flutter as well as VueJs. It's VueJs version is [here](https://github.com/yash1200/Petals/tree/master/petal_web).
+
 ## Supported Platforms
 
 * Android
