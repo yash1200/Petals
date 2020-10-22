@@ -51,6 +51,12 @@ Petals will show you every possible detail about a restaurant like menu, name of
     flutter build apk --release
     ```
     
+    or build for web
+    
+   ```
+   flutter build web --release
+   ```
+    
 5. Run Petals Web
 
     ```
