@@ -1,6 +1,6 @@
 # Petal Web
 
-This is the web version of the `Petal` app made with VueJs.
+This is the web version of the [Petal](https://github.com/yash1200/Petals/tree/master/petal) app, made with VueJs.
 
 Petal Web is a service with which we can get details like menu, name of owner, phone, email and other details of a restaurant just by scanning a QR-code at the restaurant or by searching it by its name.
 
