@@ -18,13 +18,11 @@ class Confirm extends StatefulWidget {
 class _ConfirmState extends State<Confirm> {
   TextEditingController codeController = TextEditingController();
   final GlobalKey<FormState> key = GlobalKey<FormState>();
-  final GlobalKey<ScaffoldState> scaffoldKey = new GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<LoginProvider>(context, listen: false);
     return Scaffold(
-      key: scaffoldKey,
       appBar: AppBar(
         title: Text('Login'),
       ),
@@ -71,7 +69,7 @@ class _ConfirmState extends State<Confirm> {
                         if (value) {
                           checkUser(context, widget.phone);
                         } else {
-                          scaffoldKey.currentState.showSnackBar(
+                          ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
                               content: Text(
                                 'Some Error Occurred',
