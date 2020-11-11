@@ -12,8 +12,8 @@ class Recent {
     this.name,
   });
 
-  String id;
-  String name;
+  String? id;
+  String? name;
 
   factory Recent.fromJson(Map<String, dynamic> json) => Recent(
         id: json["id"],

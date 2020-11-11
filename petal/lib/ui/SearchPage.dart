@@ -51,19 +51,19 @@ class _SearchPageState extends State<SearchPage> {
               padding: EdgeInsets.only(top: 10),
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
-              itemCount: snapshot.data.length,
+              itemCount: (snapshot.data! as List).length,
               itemBuilder: (context, index) {
                 return Card(
                   child: ListTile(
-                    title: Text(snapshot.data[index].name),
+                    title: Text((snapshot.data! as List)[index].name),
                     onTap: () {
-                      print(snapshot.data[index].id);
+                      print((snapshot.data! as List)[index].id);
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) {
                             return MenuScreen(
-                              id: snapshot.data[index].id,
+                              id: (snapshot.data! as List)[index].id,
                             );
                           },
                         ),
