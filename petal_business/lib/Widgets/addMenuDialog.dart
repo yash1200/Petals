@@ -21,7 +21,7 @@ void addMenuDialog(BuildContext context) {
           ),
           FlatButton(
             onPressed: () {
-              if (key.currentState.validate()) {
+              if (key.currentState!.validate()) {
                 provider.addMenu(
                   Menu(
                     type: typeController.text,
@@ -46,7 +46,7 @@ void addMenuDialog(BuildContext context) {
               hintText: 'Chapati',
             ),
             validator: (value) {
-              if (value.isEmpty) return "Type can\'t be empty";
+              if (value!.isEmpty) return "Type can\'t be empty";
               return null;
             },
           ),

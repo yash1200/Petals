@@ -25,7 +25,7 @@ void showDeleteDialog(BuildContext context, var key) {
           ),
           FlatButton(
             onPressed: () {
-              deleteRestaurant(provider.restaurant).then((value) {
+              deleteRestaurant(provider.restaurant!).then((value) {
                 if (value) {
                   firebaseLogOut(context);
                 } else {

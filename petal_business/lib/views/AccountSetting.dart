@@ -58,7 +58,7 @@ class _AccountSettingState extends State<AccountSetting> {
 
   @override
   void dispose() {
-    _scaffoldKey?.currentState?.dispose();
+    _scaffoldKey.currentState?.dispose();
     super.dispose();
   }
 }

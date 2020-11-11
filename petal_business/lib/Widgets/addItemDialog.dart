@@ -22,7 +22,7 @@ void addItemDialog(BuildContext context, int index) {
           ),
           FlatButton(
             onPressed: () {
-              if (key.currentState.validate()) {
+              if (key.currentState!.validate()) {
                 provider.addItem(
                   Item(
                     name: nameController.text,
@@ -51,7 +51,7 @@ void addItemDialog(BuildContext context, int index) {
                   hintText: 'Chapati',
                 ),
                 validator: (value) {
-                  if (value.isEmpty) return "Type can\'t be empty";
+                  if (value!.isEmpty) return "Type can\'t be empty";
                   return null;
                 },
               ),
@@ -68,7 +68,7 @@ void addItemDialog(BuildContext context, int index) {
                   hintText: '20',
                 ),
                 validator: (value) {
-                  if (value.isEmpty) return "Price can\'t be empty";
+                  if (value!.isEmpty) return "Price can\'t be empty";
                   return null;
                 },
               ),

@@ -17,14 +17,14 @@ class Restaurant {
     this.v,
   });
 
-  String id;
-  String owner;
-  String ownerId;
-  String name;
-  String phone;
-  String email;
-  List<Menu> menus;
-  int v;
+  String? id;
+  String? owner;
+  String? ownerId;
+  String? name;
+  String? phone;
+  String? email;
+  List<Menu>? menus;
+  int? v;
 
   factory Restaurant.fromJson(Map<String, dynamic> json) => Restaurant(
         id: json["_id"],
@@ -44,7 +44,7 @@ class Restaurant {
         "name": name,
         "phone": phone,
         "email": email,
-        "menus": List<dynamic>.from(menus.map((x) => x.toJson())),
+        "menus": List<dynamic>.from(menus!.map((x) => x.toJson())),
         "__v": v,
       };
 }
@@ -55,8 +55,8 @@ class Menu {
     this.type,
   });
 
-  List<Item> items;
-  String type;
+  List<Item>? items;
+  String? type;
 
   factory Menu.fromJson(Map<String, dynamic> json) => Menu(
         items: List<Item>.from(json["items"].map((x) => Item.fromJson(x))),
@@ -64,7 +64,7 @@ class Menu {
       );
 
   Map<String, dynamic> toJson() => {
-        "items": List<dynamic>.from(items.map((x) => x.toJson())),
+        "items": List<dynamic>.from(items!.map((x) => x.toJson())),
         "type": type,
       };
 }
@@ -75,8 +75,8 @@ class Item {
     this.price,
   });
 
-  String name;
-  int price;
+  String? name;
+  int? price;
 
   factory Item.fromJson(Map<String, dynamic> json) => Item(
         name: json["name"],

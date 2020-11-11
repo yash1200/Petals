@@ -16,9 +16,9 @@ class _EditInfoState extends State<EditInfo> {
 
   void setValues(BuildContext context) {
     final provider = Provider.of<RestaurantProvider>(context, listen: false);
-    nameController.text = provider.restaurant.owner;
-    resNameController.text = provider.restaurant.name;
-    emailController.text = provider.restaurant.email;
+    nameController.text = provider.restaurant!.owner;
+    resNameController.text = provider.restaurant!.name;
+    emailController.text = provider.restaurant!.email;
   }
 
   @override
@@ -50,7 +50,7 @@ class _EditInfoState extends State<EditInfo> {
                 ),
               ),
               validator: (value) {
-                if (value.isEmpty) return "Name can\'t be empty";
+                if (value!.isEmpty) return "Name can\'t be empty";
                 return null;
               },
             ),
@@ -67,7 +67,7 @@ class _EditInfoState extends State<EditInfo> {
                 ),
               ),
               validator: (value) {
-                if (value.isEmpty) return "Restaurant name can\'t be empty";
+                if (value!.isEmpty) return "Restaurant name can\'t be empty";
                 return null;
               },
             ),
