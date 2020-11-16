@@ -12,8 +12,8 @@ class Searchres {
     this.name,
   });
 
-  String? id;
-  String? name;
+  String id;
+  String name;
 
   factory Searchres.fromJson(Map<String, dynamic> json) => Searchres(
         id: json["_id"],

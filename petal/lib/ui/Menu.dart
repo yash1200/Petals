@@ -10,25 +10,25 @@ import 'package:provider/provider.dart';
 import '../provider/RecentProvider.dart';
 
 class MenuWid extends StatefulWidget {
-  final Restaurant? restaurant;
+  final Restaurant restaurant;
 
   MenuWid({this.restaurant});
 
   @override
-  _MenuWidState createState() => _MenuWidState(restaurant: restaurant!);
+  _MenuWidState createState() => _MenuWidState(restaurant: restaurant);
 }
 
 class _MenuWidState extends State<MenuWid> {
-  late Restaurant restaurant;
+  Restaurant restaurant;
 
-  _MenuWidState({required this.restaurant});
+  _MenuWidState({this.restaurant});
 
   void sendData(BuildContext context) async {
     final provider = Provider.of<RecentProvider>(context);
     Directory directory = await getApplicationDocumentsDirectory();
     File file = File('${directory.path}/data.txt');
     String contents = await file.readAsString();
-    List<Recent> recents = recentFromJson(contents), newRecent = <Recent>[];
+    List<Recent> recents = recentFromJson(contents), newRecent = List<Recent>();
     recents.forEach((element) {
       if (element.id != restaurant.id) newRecent.add(element);
     });
@@ -48,7 +48,7 @@ class _MenuWidState extends State<MenuWid> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(restaurant.name!),
+        title: Text(restaurant.name),
         elevation: 0,
       ),
       body: SingleChildScrollView(
@@ -57,18 +57,18 @@ class _MenuWidState extends State<MenuWid> {
           children: [
             ListTile(
               title: Text('Owner'),
-              trailing: Text(restaurant.owner!),
+              trailing: Text(restaurant.owner),
             ),
             ListTile(
               title: Text('Phone'),
-              trailing: Text(restaurant.phone!),
+              trailing: Text(restaurant.phone),
             ),
-            for (int i = 0; i < restaurant.menus!.length; i++)
+            for (int i = 0; i < restaurant.menus.length; i++)
               ExpansionTile(
-                title: Text(restaurant.menus![i].type!),
-                children: restaurant.menus![i].items!.map((Item item) {
+                title: Text(restaurant.menus[i].type),
+                children: restaurant.menus[i].items.map((Item item) {
                   return ListTile(
-                    title: Text(item.name!),
+                    title: Text(item.name),
                     trailing: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [

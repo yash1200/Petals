@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Template extends StatefulWidget {
-  final Widget? body;
-  final VoidCallback? onTap;
+  final Widget body;
+  final onTap;
 
   Template({this.body, this.onTap});
 

@@ -9,7 +9,7 @@ class ScanQr extends StatefulWidget {
 
 class _ScanQrState extends State<ScanQr> {
   final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
-  QRViewController? controller;
+  QRViewController controller;
 
   void _onQRViewCreated(QRViewController controller) {
     this.controller = controller;
