@@ -25,7 +25,7 @@ class _GetQrState extends State<GetQr> {
           IconButton(
             icon: Icon(Icons.save),
             onPressed: () {
-              saveQrCode(_scaffoldKey, provider.restaurant!.id!);
+              saveQrCode(_scaffoldKey, provider.restaurant.id);
             },
             tooltip: 'Save',
           ),
@@ -34,7 +34,7 @@ class _GetQrState extends State<GetQr> {
       body: Center(
         child: provider.restaurant != null
             ? QrImage(
-                data: provider.restaurant!.id!,
+                data: provider.restaurant.id,
               )
             : ConnectionError(),
       ),

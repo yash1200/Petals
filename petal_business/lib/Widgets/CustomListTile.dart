@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class CustomListTile extends StatelessWidget {
-  final String? title;
-  final VoidCallback? onTap;
-  final IconData? icon;
+  final String title;
+  final onTap;
+  final icon;
 
   CustomListTile({this.title, this.onTap, this.icon});
 
@@ -11,7 +11,7 @@ class CustomListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
-        title: Text(title!),
+        title: Text(title),
         leading: Icon(icon),
         onTap: onTap,
       ),

@@ -31,7 +31,7 @@ class _LoginState extends State<Login> {
               TextFormField(
                 controller: phoneController,
                 onTap: () {
-                  key.currentState!.reset();
+                  key.currentState.reset();
                 },
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
@@ -44,7 +44,7 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 validator: (value) {
-                  if (value!.length != 10) return "Invalid Phone Number";
+                  if (value.length != 10) return "Invalid Phone Number";
                   return null;
                 },
               ),
@@ -53,7 +53,7 @@ class _LoginState extends State<Login> {
               ),
               CustomFlatButton(
                 onTap: () {
-                  if (key.currentState!.validate()) {
+                  if (key.currentState.validate()) {
                     verifyPhoneNumber(phoneController.text, context);
                     Navigator.pushReplacement(context,
                         MaterialPageRoute(builder: (context) {
@@ -74,8 +74,8 @@ class _LoginState extends State<Login> {
 
   @override
   void dispose() {
-    scaffoldKey.currentState?.dispose();
-    key.currentState?.dispose();
+    scaffoldKey?.currentState?.dispose();
+    key?.currentState?.dispose();
     super.dispose();
   }
 }

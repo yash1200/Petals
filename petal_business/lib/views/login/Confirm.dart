@@ -37,7 +37,7 @@ class _ConfirmState extends State<Confirm> {
               TextFormField(
                 controller: codeController,
                 onTap: () {
-                  key.currentState!.reset();
+                  key.currentState.reset();
                 },
                 obscureText: true,
                 keyboardType: TextInputType.number,
@@ -51,7 +51,7 @@ class _ConfirmState extends State<Confirm> {
                   ),
                 ),
                 validator: (value) {
-                  if (value!.length != 6) return "Invalid Code";
+                  if (value.length != 6) return "Invalid Code";
                   return null;
                 },
               ),
@@ -60,7 +60,7 @@ class _ConfirmState extends State<Confirm> {
               ),
               CustomFlatButton(
                 onTap: () async {
-                  if (key.currentState!.validate()) {
+                  if (key.currentState.validate()) {
                     signInWithPhoneNumber(
                       codeController.text,
                       provider.verifyId,

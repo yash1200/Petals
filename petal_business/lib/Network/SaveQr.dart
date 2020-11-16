@@ -27,5 +27,5 @@ Future<Uint8List> _getWidgetImage(String text) async {
   final a = await image.toByteData(
     format: ImageByteFormat.png,
   );
-  return a!.buffer.asUint8List();
+  return a.buffer.asUint8List();
 }

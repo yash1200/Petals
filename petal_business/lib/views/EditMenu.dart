@@ -26,8 +26,8 @@ class _EditMenuState extends State<EditMenu> {
         actions: [
           IconButton(
             onPressed: () {
-              provider.restaurant!.menus = provider.menu;
-              updateRestaurant(provider.restaurant!);
+              provider.restaurant.menus = provider.menu;
+              updateRestaurant(provider.restaurant);
             },
             icon: Icon(Icons.save),
           ),
@@ -40,11 +40,11 @@ class _EditMenuState extends State<EditMenu> {
                 children: [
                   for (int i = 0; i < provider.menu.length; i++)
                     ExpansionTile(
-                      title: Text(provider.menu[i].type!),
+                      title: Text(provider.menu[i].type),
                       children: [
-                        for (int j = 0; j < provider.menu[i].items!.length; j++)
+                        for (int j = 0; j < provider.menu[i].items.length; j++)
                           ListTile(
-                            title: Text(provider.menu[i].items![j].name!),
+                            title: Text(provider.menu[i].items[j].name),
                             trailing: Row(
                               mainAxisSize: MainAxisSize.min,
                               children: [
@@ -55,8 +55,8 @@ class _EditMenuState extends State<EditMenu> {
                                 SizedBox(
                                   width: 4,
                                 ),
-                                Text(provider.menu[i].items![j].price
-                                    .toString()),
+                                Text(
+                                    provider.menu[i].items[j].price.toString()),
                               ],
                             ),
                             onLongPress: () {

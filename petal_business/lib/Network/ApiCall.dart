@@ -24,7 +24,7 @@ Future<bool> postRestaurant(Restaurant restaurant) async {
 
 Future<bool> updateRestaurant(Restaurant restaurant) async {
   var response = await http.put(
-    Strings().url + restaurant.id!,
+    Strings().url + restaurant.id,
     headers: {"Content-Type": "application/json"},
     body: restaurantToJson(restaurant),
   );
@@ -34,7 +34,7 @@ Future<bool> updateRestaurant(Restaurant restaurant) async {
 
 Future<bool> deleteRestaurant(Restaurant restaurant) async {
   var response = await http.delete(
-    Strings().url + restaurant.id!,
+    Strings().url + restaurant.id,
     headers: {"Content-Type": "application/json"},
   );
   if (response.statusCode == 200) return true;
@@ -46,5 +46,5 @@ Future<void> setRestaurant(BuildContext context) async {
   User firebaseUser = FirebaseAuth.instance.currentUser;
   var response = await http.get(Strings().ownerUrl + firebaseUser.uid);
   provider.setRestaurant(restaurantFromJson(response.body));
-  provider.setMenu(provider.restaurant!.menus!);
+  provider.setMenu(provider.restaurant.menus);
 }
