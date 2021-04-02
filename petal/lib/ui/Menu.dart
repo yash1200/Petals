@@ -12,7 +12,9 @@ import '../provider/RecentProvider.dart';
 class MenuWid extends StatefulWidget {
   final Restaurant restaurant;
 
-  MenuWid({this.restaurant});
+  MenuWid({
+    required this.restaurant,
+  });
 
   @override
   _MenuWidState createState() => _MenuWidState(restaurant: restaurant);
@@ -21,14 +23,16 @@ class MenuWid extends StatefulWidget {
 class _MenuWidState extends State<MenuWid> {
   Restaurant restaurant;
 
-  _MenuWidState({this.restaurant});
+  _MenuWidState({
+    required this.restaurant,
+  });
 
   void sendData(BuildContext context) async {
     final provider = Provider.of<RecentProvider>(context);
     Directory directory = await getApplicationDocumentsDirectory();
     File file = File('${directory.path}/data.txt');
     String contents = await file.readAsString();
-    List<Recent> recents = recentFromJson(contents), newRecent = List<Recent>();
+    List<Recent> recents = recentFromJson(contents), newRecent = <Recent>[];
     recents.forEach((element) {
       if (element.id != restaurant.id) newRecent.add(element);
     });
@@ -48,7 +52,8 @@ class _MenuWidState extends State<MenuWid> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(restaurant.name),
+        titleSpacing: 0,
+        title: Text(restaurant.name ?? ''),
         elevation: 0,
       ),
       body: SingleChildScrollView(
@@ -57,34 +62,42 @@ class _MenuWidState extends State<MenuWid> {
           children: [
             ListTile(
               title: Text('Owner'),
-              trailing: Text(restaurant.owner),
+              trailing: Text(restaurant.owner ?? ''),
             ),
             ListTile(
               title: Text('Phone'),
-              trailing: Text(restaurant.phone),
+              trailing: Text(restaurant.phone ?? ''),
             ),
-            for (int i = 0; i < restaurant.menus.length; i++)
-              ExpansionTile(
-                title: Text(restaurant.menus[i].type),
-                children: restaurant.menus[i].items.map((Item item) {
-                  return ListTile(
-                    title: Text(item.name),
-                    trailing: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(
-                          FontAwesomeIcons.rupeeSign,
-                          size: 13,
+            ListView.builder(
+              itemCount: restaurant.menus?.length ?? 0,
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              itemBuilder: (context, index) {
+                return ExpansionTile(
+                  title: Text(restaurant.menus?[index].type ?? ''),
+                  children: restaurant.menus![index].items!.map(
+                    (Item item) {
+                      return ListTile(
+                        title: Text(item.name ?? ''),
+                        trailing: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              FontAwesomeIcons.rupeeSign,
+                              size: 13,
+                            ),
+                            Text(
+                              item.price.toString(),
+                              style: TextStyle(fontSize: 15),
+                            ),
+                          ],
                         ),
-                        Text(
-                          item.price.toString(),
-                          style: TextStyle(fontSize: 15),
-                        ),
-                      ],
-                    ),
-                  );
-                }).toList(),
-              ),
+                      );
+                    },
+                  ).toList(),
+                );
+              },
+            ),
           ],
         ),
       ),

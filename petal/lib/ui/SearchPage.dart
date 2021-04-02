@@ -17,7 +17,11 @@ class _SearchPageState extends State<SearchPage> {
 
   Future<List<Searchres>> search(String q) async {
     if (q == "") return [];
-    var response = await http.get(Strings().searchUrl + "/?q=$q");
+    var response = await http.get(
+      Uri.parse(
+        Strings.searchUrl + "/?q=$q",
+      ),
+    );
     return searchresFromJson(response.body);
   }
 
@@ -26,6 +30,7 @@ class _SearchPageState extends State<SearchPage> {
     final provider = Provider.of<RecentProvider>(context);
     return Scaffold(
       appBar: AppBar(
+        titleSpacing: 0,
         title: TextField(
           controller: textEditingController,
           decoration: InputDecoration(
@@ -45,25 +50,24 @@ class _SearchPageState extends State<SearchPage> {
       ),
       body: FutureBuilder(
         future: search(provider.q),
-        builder: (context, snapshot) {
+        builder: (context, AsyncSnapshot<List<Searchres>> snapshot) {
           if (snapshot.hasData) {
             return ListView.builder(
               padding: EdgeInsets.only(top: 10),
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
-              itemCount: snapshot.data.length,
+              itemCount: snapshot.data?.length ?? 0,
               itemBuilder: (context, index) {
                 return Card(
                   child: ListTile(
-                    title: Text(snapshot.data[index].name),
+                    title: Text(snapshot.data?[index].name ?? ''),
                     onTap: () {
-                      print(snapshot.data[index].id);
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) {
                             return MenuScreen(
-                              id: snapshot.data[index].id,
+                              id: snapshot.data?[index].id ?? '',
                             );
                           },
                         ),

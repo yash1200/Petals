@@ -9,7 +9,9 @@ import 'package:petal/widgets/connectionError.dart';
 class MenuScreen extends StatefulWidget {
   final String id;
 
-  MenuScreen({this.id});
+  MenuScreen({
+    required this.id,
+  });
 
   @override
   _MenuScreenState createState() => _MenuScreenState();
@@ -17,7 +19,9 @@ class MenuScreen extends StatefulWidget {
 
 class _MenuScreenState extends State<MenuScreen> {
   Future<Restaurant> getData() async {
-    var response = await http.get(Strings().url + widget.id);
+    final response = await http.get(
+      Uri.parse(Strings.url + widget.id),
+    );
     return restaurantFromJson(response.body);
   }
 
@@ -28,7 +32,7 @@ class _MenuScreenState extends State<MenuScreen> {
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           return MenuWid(
-            restaurant: snapshot.data,
+            restaurant: snapshot.data as Restaurant,
           );
         } else if (snapshot.hasError) {
           return Template(

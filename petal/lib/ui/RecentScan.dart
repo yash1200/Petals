@@ -17,17 +17,22 @@ class _RecentScanState extends State<RecentScan> {
       return ListView.builder(
         shrinkWrap: true,
         physics: NeverScrollableScrollPhysics(),
-        itemCount: provider.getRecent().length,
+        itemCount: provider.getRecent()?.length ?? 0,
         itemBuilder: (context, index) {
           return Card(
             child: ListTile(
-              title: Text(provider.getRecent()[index].name),
+              title: Text(provider.getRecent()?[index].name ?? ''),
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return MenuScreen(
-                    id: provider.getRecent()[index].id,
-                  );
-                }));
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return MenuScreen(
+                        id: provider.getRecent()?[index].id ?? '',
+                      );
+                    },
+                  ),
+                );
               },
             ),
             shape: RoundedRectangleBorder(

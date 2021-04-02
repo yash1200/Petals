@@ -9,22 +9,26 @@ class ScanQr extends StatefulWidget {
 
 class _ScanQrState extends State<ScanQr> {
   final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
-  QRViewController controller;
+  QRViewController? controller;
 
   void _onQRViewCreated(QRViewController controller) {
     this.controller = controller;
-    controller.scannedDataStream.listen((scanData) {
-      controller.pauseCamera();
-      Navigator.pop(context);
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) {
-            return MenuScreen(id: scanData);
-          },
-        ),
-      );
-    });
+    controller.scannedDataStream.listen(
+      (scanData) {
+        controller.pauseCamera();
+        Navigator.pop(context);
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return MenuScreen(
+                id: scanData.code,
+              );
+            },
+          ),
+        );
+      },
+    );
   }
 
   @override

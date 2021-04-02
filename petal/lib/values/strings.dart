@@ -1,6 +1,6 @@
 class Strings {
-  String appName = 'Petal';
-  static String ip = "192.168.0.106:3000";
-  String url = "http://$ip/petal/";
-  String searchUrl = "http://$ip/search";
+  static const String appName = 'Petal';
+  static const String ip = "192.168.0.105:3000";
+  static const String url = "http://$ip/petal/";
+  static const String searchUrl = "http://$ip/search";
 }
