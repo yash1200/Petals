@@ -7,14 +7,18 @@ import 'package:petal_business/values/Strings.dart';
 import 'package:provider/provider.dart';
 
 Future<bool> checkUserExists(String phone) async {
-  var response = await http.get(Strings().checkUrl + "?phone=$phone");
+  var response = await http.get(
+    Uri.parse(
+      Strings.checkUrl + "?phone=$phone",
+    ),
+  );
   if (response.body[0] == 't') return true;
   return false;
 }
 
 Future<bool> postRestaurant(Restaurant restaurant) async {
   var response = await http.post(
-    Strings().url,
+    Uri.parse(Strings.url),
     headers: {"Content-Type": "application/json"},
     body: restaurantToJson(restaurant),
   );
@@ -24,7 +28,7 @@ Future<bool> postRestaurant(Restaurant restaurant) async {
 
 Future<bool> updateRestaurant(Restaurant restaurant) async {
   var response = await http.put(
-    Strings().url + restaurant.id,
+    Uri.parse(Strings.url + restaurant.id!),
     headers: {"Content-Type": "application/json"},
     body: restaurantToJson(restaurant),
   );
@@ -34,7 +38,7 @@ Future<bool> updateRestaurant(Restaurant restaurant) async {
 
 Future<bool> deleteRestaurant(Restaurant restaurant) async {
   var response = await http.delete(
-    Strings().url + restaurant.id,
+    Uri.parse(Strings.url + restaurant.id!),
     headers: {"Content-Type": "application/json"},
   );
   if (response.statusCode == 200) return true;
@@ -43,8 +47,12 @@ Future<bool> deleteRestaurant(Restaurant restaurant) async {
 
 Future<void> setRestaurant(BuildContext context) async {
   final provider = Provider.of<RestaurantProvider>(context, listen: false);
-  User firebaseUser = FirebaseAuth.instance.currentUser;
-  var response = await http.get(Strings().ownerUrl + firebaseUser.uid);
+  final User firebaseUser = FirebaseAuth.instance.currentUser!;
+  var response = await http.get(
+    Uri.parse(
+      Strings.ownerUrl + firebaseUser.uid,
+    ),
+  );
   provider.setRestaurant(restaurantFromJson(response.body));
-  provider.setMenu(provider.restaurant.menus);
+  provider.setMenu(provider.restaurant?.menus ?? []);
 }

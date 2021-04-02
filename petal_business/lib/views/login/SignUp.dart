@@ -15,11 +15,11 @@ class _SignUpState extends State<SignUp> {
   TextEditingController emailController = TextEditingController();
   TextEditingController resNameController = TextEditingController();
   final GlobalKey<FormState> key = GlobalKey<FormState>();
-  User firebaseUser;
-  Restaurant restaurant;
+  late User firebaseUser;
+  late Restaurant restaurant;
 
   void getUserL() {
-    firebaseUser = FirebaseAuth.instance.currentUser;
+    firebaseUser = FirebaseAuth.instance.currentUser!;
   }
 
   @override
@@ -54,7 +54,7 @@ class _SignUpState extends State<SignUp> {
                     ),
                   ),
                   validator: (value) {
-                    if (value.isEmpty) return "Name required";
+                    if (value?.isEmpty ?? true) return "Name required";
                     return null;
                   },
                 ),
@@ -73,7 +73,8 @@ class _SignUpState extends State<SignUp> {
                     ),
                   ),
                   validator: (value) {
-                    if (value.isEmpty) return "Restaurant name required";
+                    if (value?.isEmpty ?? true)
+                      return "Restaurant name required";
                     return null;
                   },
                 ),
@@ -97,22 +98,26 @@ class _SignUpState extends State<SignUp> {
                 ),
                 CustomFlatButton(
                   onTap: () {
-                    if (key.currentState.validate()) {
+                    if (key.currentState!.validate()) {
                       restaurant = Restaurant(
                         name: resNameController.text,
                         owner: nameController.text,
-                        email: emailController?.text,
-                        phone: firebaseUser.phoneNumber.substring(3),
+                        email: emailController.text,
+                        phone: firebaseUser.phoneNumber!.substring(3),
                         ownerId: firebaseUser.uid,
                         menus: [],
                       );
                       postRestaurant(restaurant).then(
                         (value) {
                           if (value) {
-                            Navigator.pushReplacement(context,
-                                MaterialPageRoute(builder: (context) {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
                                   return HomePage();
-                                }));
+                                },
+                              ),
+                            );
                           }
                         },
                       );
@@ -126,5 +131,13 @@ class _SignUpState extends State<SignUp> {
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    nameController.dispose();
+    resNameController.dispose();
+    super.dispose();
   }
 }

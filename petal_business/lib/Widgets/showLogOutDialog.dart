@@ -12,13 +12,13 @@ void showLogOutDialog(BuildContext context) {
         title: Text('Log Out ?'),
         content: Text('Are you sure you want to Logout ?'),
         actions: [
-          FlatButton(
+          TextButton(
             onPressed: () {
               Navigator.pop(context);
             },
             child: Text('Cancel'),
           ),
-          FlatButton(
+          TextButton(
             onPressed: () {
               firebaseLogOut(context);
             },

@@ -1,24 +1,28 @@
 import 'package:flutter/material.dart';
-
 import 'Constants.dart';
 
 class CustomFlatButton extends StatelessWidget {
-  final text;
-  final onTap;
+  final String text;
+  final VoidCallback? onTap;
 
-  CustomFlatButton({this.text, this.onTap});
+  CustomFlatButton({
+    required this.text,
+    this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return FlatButton(
+    return TextButton(
       onPressed: onTap,
-      padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
       child: Text(
         text,
         style: buttonTextStyle,
       ),
-      shape: roundedRectangleBorder,
-      color: Colors.black26,
+      style: TextButton.styleFrom(
+        padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
+        shape: roundedRectangleBorder,
+        backgroundColor: Colors.black26,
+      ),
     );
   }
 }

@@ -5,12 +5,7 @@ import 'package:petal_business/Widgets/ConnectionError.dart';
 import 'package:provider/provider.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
-class GetQr extends StatefulWidget {
-  @override
-  _GetQrState createState() => _GetQrState();
-}
-
-class _GetQrState extends State<GetQr> {
+class GetQr extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
   @override
@@ -25,7 +20,7 @@ class _GetQrState extends State<GetQr> {
           IconButton(
             icon: Icon(Icons.save),
             onPressed: () {
-              saveQrCode(_scaffoldKey, provider.restaurant.id);
+              saveQrCode(_scaffoldKey, provider.restaurant!.id!);
             },
             tooltip: 'Save',
           ),
@@ -34,7 +29,7 @@ class _GetQrState extends State<GetQr> {
       body: Center(
         child: provider.restaurant != null
             ? QrImage(
-                data: provider.restaurant.id,
+                data: provider.restaurant!.id!,
               )
             : ConnectionError(),
       ),

@@ -16,9 +16,9 @@ class _EditInfoState extends State<EditInfo> {
 
   void setValues(BuildContext context) {
     final provider = Provider.of<RestaurantProvider>(context, listen: false);
-    nameController.text = provider.restaurant.owner;
-    resNameController.text = provider.restaurant.name;
-    emailController.text = provider.restaurant.email;
+    nameController.text = provider.restaurant?.owner ?? "";
+    resNameController.text = provider.restaurant?.name ?? "";
+    emailController.text = provider.restaurant?.email ?? "";
   }
 
   @override
@@ -50,7 +50,7 @@ class _EditInfoState extends State<EditInfo> {
                 ),
               ),
               validator: (value) {
-                if (value.isEmpty) return "Name can\'t be empty";
+                if (value?.isEmpty ?? true) return "Name can\'t be empty";
                 return null;
               },
             ),
@@ -67,7 +67,8 @@ class _EditInfoState extends State<EditInfo> {
                 ),
               ),
               validator: (value) {
-                if (value.isEmpty) return "Restaurant name can\'t be empty";
+                if (value?.isEmpty ?? true)
+                  return "Restaurant name can\'t be empty";
                 return null;
               },
             ),
@@ -87,7 +88,7 @@ class _EditInfoState extends State<EditInfo> {
             SizedBox(
               height: 20,
             ),
-            RaisedButton(
+            ElevatedButton(
               onPressed: () {
                 updateInfo(
                   context: context,
@@ -97,21 +98,31 @@ class _EditInfoState extends State<EditInfo> {
                   key: _scaffoldKey,
                 );
               },
-              padding: EdgeInsets.fromLTRB(40, 10, 40, 10),
               child: Text(
                 'Update',
                 style: TextStyle(
                   fontSize: 16,
                 ),
               ),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
+              style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.fromLTRB(40, 10, 40, 10),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                primary: Colors.black26,
               ),
-              color: Colors.black26,
             ),
           ],
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    nameController.dispose();
+    resNameController.dispose();
+    super.dispose();
   }
 }

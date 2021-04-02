@@ -7,14 +7,14 @@ import 'package:provider/provider.dart';
 import 'ApiCall.dart';
 
 void updateInfo({
-  BuildContext context,
-  String owner,
-  String name,
-  String email,
-  var key,
+  required BuildContext context,
+  required String owner,
+  required String name,
+  required String email,
+  required var key,
 }) {
   final provider = Provider.of<RestaurantProvider>(context, listen: false);
-  Restaurant _restaurant = provider.restaurant;
+  Restaurant _restaurant = provider.restaurant!;
   if (_restaurant.owner == owner &&
       _restaurant.name == name &&
       _restaurant.email == email) {

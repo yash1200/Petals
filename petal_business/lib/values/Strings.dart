@@ -1,8 +1,8 @@
 class Strings {
-  String appName = 'Petal';
-  static String ip = "192.168.0.106:3000";
-  String url = "http://$ip/petal/";
-  String ownerUrl = "http://$ip/petal/owner/";
-  String searchUrl = "http://$ip/search";
-  String checkUrl = "http://$ip/check";
+  static const String appName = 'Petal';
+  static const String ip = "192.168.0.105:3000";
+  static const String url = "http://$ip/petal/";
+  static const String ownerUrl = "http://$ip/petal/owner/";
+  static const String searchUrl = "http://$ip/search";
+  static const String checkUrl = "http://$ip/check";
 }

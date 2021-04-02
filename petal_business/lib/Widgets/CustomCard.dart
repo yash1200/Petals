@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 
 class CustomCard extends StatelessWidget {
-  final image, text;
+  final String image;
+  final String text;
   final intent;
 
-  CustomCard({this.text, this.image, this.intent});
+  CustomCard({
+    required this.text,
+    required this.image,
+    this.intent,
+  });
 
   @override
   Widget build(BuildContext context) {

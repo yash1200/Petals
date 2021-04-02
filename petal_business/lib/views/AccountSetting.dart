@@ -5,12 +5,7 @@ import 'package:petal_business/Widgets/CustomListTile.dart';
 import 'package:petal_business/Widgets/showLogOutDialog.dart';
 import 'package:petal_business/views/EditInfo.dart';
 
-class AccountSetting extends StatefulWidget {
-  @override
-  _AccountSettingState createState() => _AccountSettingState();
-}
-
-class _AccountSettingState extends State<AccountSetting> {
+class AccountSetting extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
   @override
@@ -30,9 +25,14 @@ class _AccountSettingState extends State<AccountSetting> {
             CustomListTile(
               title: 'Edit Your Profile',
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return EditInfo();
-                }));
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return EditInfo();
+                    },
+                  ),
+                );
               },
               icon: Icons.edit,
             ),
@@ -54,11 +54,5 @@ class _AccountSettingState extends State<AccountSetting> {
         ),
       ),
     );
-  }
-
-  @override
-  void dispose() {
-    _scaffoldKey?.currentState?.dispose();
-    super.dispose();
   }
 }

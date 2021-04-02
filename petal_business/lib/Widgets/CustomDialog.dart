@@ -17,21 +17,23 @@ void showDeleteDialog(BuildContext context, var key) {
         title: Text('Delete Account ?'),
         content: Text('Are you sure you want to delete your account ?'),
         actions: [
-          FlatButton(
+          TextButton(
             onPressed: () {
               Navigator.pop(context);
             },
             child: Text('Cancel'),
           ),
-          FlatButton(
+          TextButton(
             onPressed: () {
-              deleteRestaurant(provider.restaurant).then((value) {
-                if (value) {
-                  firebaseLogOut(context);
-                } else {
-                  showSnackBar(key, 'Something Went wrong!');
-                }
-              });
+              deleteRestaurant(provider.restaurant!).then(
+                (value) {
+                  if (value) {
+                    firebaseLogOut(context);
+                  } else {
+                    showSnackBar(key, 'Something Went wrong!');
+                  }
+                },
+              );
             },
             child: Text('Confirm'),
           ),

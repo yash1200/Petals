@@ -14,13 +14,13 @@ void deleteItemDialog(BuildContext context, int index, int itemIndex) {
         title: Text('Are you sure ?'),
         content: Text('Are you sure you want to delete this item ?'),
         actions: [
-          FlatButton(
+          TextButton(
             onPressed: () {
               Navigator.pop(context);
             },
             child: Text('Cancel'),
           ),
-          FlatButton(
+          TextButton(
             onPressed: () {
               provider.deleteItem(index, itemIndex);
               Navigator.pop(context);
